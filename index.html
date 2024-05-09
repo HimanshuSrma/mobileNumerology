@@ -1,0 +1,918 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobile Number Numerology - Himanshu Sharma</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+
+    <style>
+      .centerdDiv {
+        height: 100vh;
+        display: grid;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+      }
+      .allGoodClass {
+        background: url("https://lordicon.com/icons/wired/flat/1103-confetti.gif");
+        background-size: 100% 250%;
+        border: #00000047;
+      }
+
+      .shadow {
+        border-radius: 10px;
+        box-shadow: #00000047 0px 0px 10px;
+      }
+
+      .borderCssCard {
+        position: relative;
+        border-top: 1px solid rgba(255, 49, 49, 0.5);
+        border-right: 1px solid rgba(0, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(57, 255, 20, 0.5);
+        border-left: 1px solid rgb(255, 255, 0);
+      }
+
+      span {
+        position: absolute;
+        border-radius: 100vmax;
+      }
+
+      .borderCssCard > .top {
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          transparent 50%,
+          rgba(255, 49, 49, 0.5),
+          rgb(255, 49, 49)
+        );
+      }
+
+      .borderCssCard > .bottom {
+        right: 0;
+        bottom: 0;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          rgb(57, 255, 20),
+          rgba(57, 255, 20, 0.5),
+          transparent 50%
+        );
+      }
+
+      .borderCssCard > .left {
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        background: linear-gradient(
+          180deg,
+          rgb(255, 255, 0),
+          rgba(255, 255, 0, 1),
+          transparent 70%
+        );
+        height: 0;
+      }
+      .borderCssCard > .right {
+        top: 0;
+        right: 0;
+        width: 5px;
+        height: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 30%,
+          rgba(0, 255, 255, 0.5),
+          rgb(0, 255, 255)
+        );
+      }
+
+      .top {
+        animation: animateTop 3s ease-in-out infinite;
+      }
+
+      .bottom {
+        animation: animateBottom 3s ease-in-out infinite;
+      }
+
+      .right {
+        animation: animateRight 3s ease-in-out infinite;
+      }
+
+      .left {
+        animation: animateLeft 3s ease-in-out infinite;
+      }
+
+      @keyframes animateTop {
+        25% {
+          width: 100%;
+          opacity: 1;
+        }
+
+        30%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes animateBottom {
+        0%,
+        50% {
+          opacity: 0;
+          width: 0;
+        }
+
+        75% {
+          opacity: 1;
+          width: 100%;
+        }
+
+        76%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes animateRight {
+        0%,
+        25% {
+          opacity: 0;
+          height: 0;
+        }
+
+        50% {
+          opacity: 1;
+          height: 100%;
+        }
+
+        55%,
+        100% {
+          height: 100%;
+          opacity: 0;
+        }
+      }
+
+      @keyframes animateLeft {
+        0%,
+        75% {
+          opacity: 0;
+          bottom: 0;
+          height: 0;
+        }
+
+        100% {
+          opacity: 1;
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="inputDiv">
+      <div class="centerdDiv">
+        <div class="row mx-0 justify-content-center">
+          <div class="col-8 col-md-6">
+            <input
+              class="form-control"
+              row="1"
+              id="numberInput"
+              placeholder="9876543210  ,  9876543210"
+              oninput="this.value = this.value.replace(/[^0-9,.]/g,'')"
+            />
+          </div>
+          <div class="col-3 col-md-3 my-auto">
+            <button class="btn btn-outline-primary" onclick="find()">
+              Analyse
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultDiv" class="" style="display: none">
+      <div class="text-end bg-light py-3 position-sticky top-0">
+        <button
+          type="button"
+          onclick="reset()"
+          class="btn btn-outline-info me-3"
+        >
+          <i class="fa fa-times"></i>&nbsp;Change Number
+        </button>
+      </div>
+      <div class="wrapperDiv row mx-0 p-3"></div>
+    </div>
+    <script>
+      let numberArr = [];
+
+      const masterArr = [
+        {
+          combo: 11,
+          effect: "Emotional, Ego, Attitude, communication and speaking fast",
+          type: 1,
+        },
+        {
+          combo: 22,
+          effect:
+            "Mood swing, Depression, to much Emotional, BP problem, If name starting with B,K, R than 100% Emotional issue",
+          type: 0,
+        },
+        {
+          combo: 33,
+          effect: "Hungary for Knowledge, Less Grounded",
+          type: 2,
+        },
+        {
+          combo: 44,
+          effect: "Delay, Struggle, Headache",
+          type: 0,
+        },
+        {
+          combo: 55,
+          effect: "Lazy, lethargic, communication and money can increase",
+          type: 1,
+        },
+        {
+          combo: 66,
+          effect:
+            "Luxury lover, Travelling, At time not allowed to use at need",
+          type: 1,
+        },
+        {
+          combo: 77,
+          effect:
+            "Mood swings, Internal Disturbances, Spirituality, Over Thinking, Anxiety",
+          type: 0,
+        },
+        {
+          combo: 88,
+          effect: "Delay, Disturbance, Obstacles",
+          type: 0,
+        },
+        {
+          combo: 99,
+          effect:
+            "Debt, Anger, Blood related issues, skin colour red tone, children can have this combo",
+          type: 0,
+        },
+
+        // upper to be checked
+
+        {
+          combo: 12,
+          effect: "Attractive face, saving person, Helpful life partner",
+          type: 1,
+        },
+        {
+          combo: "13",
+          effect:
+            "Good Advisor, Good Education, Respectful and Popular, Special in his circle, 31 combination makes person Professional",
+          type: 1,
+        },
+        {
+          combo: 31,
+          effect:
+            "Good Advisor, Good Education, Respectful and Popular, Special in his circle, 31 combination makes person Professional",
+          type: 1,
+        },
+        {
+          combo: 15,
+          effect:
+            "Father's popularity, Generally these people make their father famous (good cause)",
+          type: 1,
+        },
+        {
+          combo: 51,
+          effect:
+            "Father's popularity, Generally these people make their father famous (good cause)",
+          type: 1,
+        },
+        {
+          combo: 25,
+          effect:
+            "Hath me Shaffa, Can work in occult science/Medical line, One who gives Bail to others, Success through Air-Travel, Try to avoid stuff related to Finance.",
+          type: 1,
+        },
+        {
+          combo: 52,
+          effect:
+            "Hath me Shaffa, Can work in occult science/Medical line, One who gives Bail to others, Success through Air-Travel, Try to avoid stuff related to Finance.",
+          type: 1,
+        },
+        {
+          combo: 29,
+          effect:
+            "Person have decent amount of Money, Live happily on the money of Someone else, Native might become egoistic, If DOB 29 Relationship issues, Success through Air-Travel, Try to avoid stuff related to Finance.",
+          type: 1,
+        },
+        {
+          combo: 92,
+          effect:
+            "Person have decent amount of Money, Live happily on the money of Someone else, Native might become egoistic, If DOB 29 Relationship issues, Success through Air-Travel, Try to avoid stuff related to Finance.",
+          type: 1,
+        },
+        {
+          combo: 73,
+          effect:
+            "Complete personality, person would be able to take benefit from knowledge.",
+          type: 1,
+        },
+        {
+          combo: 37,
+          effect:
+            "Complete personality, person would be able to take benefit from knowledge.",
+          type: 1,
+        },
+        {
+          combo: 38,
+          effect:
+            "Real Estate, Counsellor, Peacemaker or mediator between Two parties.",
+          type: 1,
+        },
+        {
+          combo: 83,
+          effect:
+            "Real Estate, Counsellor, Peacemaker or mediator between Two parties.",
+          type: 1,
+        },
+        {
+          combo: 47,
+          effect:
+            "Honest, Brilliant, gives importance of Integrity, Rahu-Ketu Combo.",
+          type: 1,
+        },
+        {
+          combo: 74,
+          effect:
+            "Honest, Brilliant, gives importance of Integrity, Rahu-Ketu Combo.",
+          type: 1,
+        },
+        {
+          combo: 57,
+          effect:
+            "Speaker, writer, Public relation, Good Expressive person, Lot of person comes to them for Advice.",
+          type: 1,
+        },
+        {
+          combo: 75,
+          effect:
+            "Speaker, writer, Public relation, Good Expressive person, Lot of person comes to them for Advice.",
+          type: 1,
+        },
+        {
+          combo: 69,
+          effect:
+            "Good management skill, Good Planner, Opposite Sex involvement.",
+          type: 1,
+        },
+        {
+          combo: 96,
+          effect:
+            "Good management skill, Good Planner, Opposite Sex involvement.",
+          type: 1,
+        },
+        {
+          combo: 78,
+          effect: "Healer, Idealistic, Solve any problem by own power.",
+          type: 1,
+        },
+        {
+          combo: 87,
+          effect: "Healer, Idealistic, Solve any problem by own power.",
+          type: 1,
+        },
+
+        // neutral
+
+        {
+          combo: 17,
+          effect:
+            "Money related work is never stopped, There is someone in close circle who is in Govt. job, Person might be working in MNC and getting good facilities ex private- Good facilities/Work from Home, Chances of 2 Marriage , More profit from Lying, If DOB has many 7, than don't chose this combo, If 2,5,6 missing in DOB and Mobile has 17/71 will give majorrelationship issues",
+          type: 2,
+        },
+        {
+          combo: 71,
+          effect:
+            "Money related work is never stopped, There is someone in close circle who is in Govt. job, Person might be working in MNC and getting good facilities ex private- Good facilities/Work from Home, Chances of 2 Marriage , More profit from Lying, If DOB has many 7, than don't chose this combo, If 2,5,6 missing in DOB and Mobile has 17/71 will give majorrelationship issues",
+          type: 2,
+        },
+        {
+          combo: 19,
+          effect:
+            "You own what u want, Always on a high place, Professional person, Rasukhdar, dom Lover",
+          type: 1,
+        },
+        {
+          combo: 91,
+          effect:
+            "You own what u want, Always on a high place, Professional person, Rasukhdar, dom Lover",
+          type: 1,
+        },
+        {
+          combo: 21,
+          effect: "Attractive face, waste of Money",
+          type: 2,
+        },
+        {
+          combo: 24,
+          effect:
+            "Keep patience to achieve something, Makes different plans and brain actively processing those plans, negative/destructive thinking.",
+          type: 2,
+        },
+        {
+          combo: 42,
+          effect:
+            "Keep patience to achieve something, Makes different plans and brain actively processing those plans, negative/destructive thinking.",
+          type: 2,
+        },
+        {
+          combo: 35,
+          effect:
+            "Native gets success away from Home, Fear of Father, Hence Successful, Good Economical Condition, Liquid money problem.",
+          type: 2,
+        },
+        {
+          combo: 53,
+          effect:
+            "Native gets success away from Home, Fear of Father, Hence Successful, Good Economical Condition, Liquid money problem.",
+          type: 2,
+        },
+        {
+          combo: 63,
+          effect:
+            "More of Principal oriented person, Barrier in Studies , Good knowledge but native will struggle in presentation.",
+          type: 2,
+        },
+        {
+          combo: 36,
+          effect:
+            "More of Principal oriented person, Barrier in Studies , Good knowledge but native will struggle in presentation.",
+          type: 2,
+        },
+
+        {
+          combo: 93,
+          effect:
+            "Loves to show-off, Person will have a lots of Duality in nature.",
+          type: 2,
+        },
+        {
+          combo: 39,
+          effect:
+            "Loves to show-off, Person will have a lots of Duality in nature.",
+          type: 2,
+        },
+        {
+          combo: 49,
+          effect: "Do risky work , Uniform work, Criminal minded.",
+          type: 2,
+        },
+        {
+          combo: 94,
+          effect: "Do risky work , Uniform work, Criminal minded.",
+          type: 2,
+        },
+        {
+          combo: 56,
+          effect:
+            "Hesitate to ask own money, Apke ghar ke pass koi big landmark he kya Mandir/Superstore, Business minded",
+          type: 2,
+        },
+        {
+          combo: 65,
+          effect:
+            "Hesitate to ask own money, Apke ghar ke pass koi big landmark he kya Mandir/Superstore, Business minded",
+          type: 2,
+        },
+        {
+          combo: 85,
+          effect:
+            "Money stuck , Calculated mind, Person doing some work related to Money/Finance, Talks about Lakhs and Crores",
+          type: 2,
+        },
+        {
+          combo: 58,
+          effect:
+            "Money stuck , Calculated mind, Person doing some work related to Money/Finance, Talks about Lakhs and Crores",
+          type: 2,
+        },
+        {
+          combo: 95,
+          effect:
+            "Destroy relationship through Bad speech , Person opt for Science or commerce stream",
+          type: 2,
+        },
+        {
+          combo: 59,
+          effect:
+            "Destroy relationship through Bad speech , Person opt for Science or commerce stream",
+          type: 2,
+        },
+        {
+          combo: 79,
+          effect: "Success after separation from Father.",
+          type: 2,
+        },
+        {
+          combo: 97,
+          effect: "Success after separation from Father.",
+          type: 2,
+        },
+        {
+          combo: 14,
+          effect:
+            "Person can get attracted to Loan liabilities, Legal Notice, Health issues, Hard work, Toughness Number.",
+          type: 0,
+        },
+        {
+          combo: 41,
+          effect:
+            "Person can get attracted to Loan liabilities, Legal Notice, Health issues, Hard work, Toughness Number.",
+          type: 0,
+        },
+        {
+          combo: 16,
+          effect:
+            "(Most Negative) Spouse health issues, married life issues, income confined (Owners have less income at the time of having this mo. No.).",
+          type: 0,
+        },
+        {
+          combo: 61,
+          effect:
+            "(Most Negative) Spouse health issues, married life issues, income confined (Owners have less income at the time of having this mo. No.).",
+          type: 0,
+        },
+        {
+          combo: 18,
+          effect:
+            "(Very Negative) Spouse health issue, understanding issues in father & son, Govt. related issue, change in job frequently.",
+          type: 0,
+        },
+        {
+          combo: 81,
+          effect:
+            "(Very Negative) Spouse health issue, understanding issues in father & son, Govt. related issue, change in job frequently.",
+          type: 0,
+        },
+        {
+          combo: 23,
+          effect:
+            "Generally many enemy but none of them will be able to harm he native.",
+          type: 0,
+        },
+        {
+          combo: 32,
+          effect:
+            "Generally many enemy but none of them will be able to harm he native.",
+          type: 0,
+        },
+        {
+          combo: 26,
+          effect:
+            "Barrier in Studies or Break in education , Girl- Problem with mother in law, Attraction towards money or opposite sex, Chances of less Sperm count or Diabetes.",
+          type: 0,
+        },
+        {
+          combo: 62,
+          effect:
+            "Barrier in Studies or Break in education , Girl- Problem with mother in law, Attraction towards money or opposite sex, Chances of less Sperm count or Diabetes.",
+          type: 0,
+        },
+        {
+          combo: 27,
+          effect:
+            "Good intuition, Joint pain Or Urine related disease, Arthritis (Vaat Issue).",
+          type: 0,
+        },
+        {
+          combo: 72,
+          effect:
+            "Good intuition, Joint pain Or Urine related disease, Arthritis (Vaat Issue).",
+          type: 0,
+        },
+        {
+          combo: 28,
+          effect:
+            "Person have decent amount of Money, Excessive Medical/Hospital Expenditure, 2 marriages in the Family, Try to avoid Bad company it can Harm you, Vish yog.",
+          type: 0,
+        },
+        {
+          combo: 82,
+          effect:
+            "Person have decent amount of Money, Excessive Medical/Hospital Expenditure, 2 marriages in the Family, Try to avoid Bad company it can Harm you, Vish yog.",
+          type: 0,
+        },
+        {
+          combo: 34,
+          effect:
+            "Legs shivering, Paralysis to someone in the family, Breathing related issues to person, if DOB has 3 or more times 8 than don't take this combo.",
+          type: 0,
+        },
+        {
+          combo: 43,
+          effect:
+            "Legs shivering, Paralysis to someone in the family, Breathing related issues to person, if DOB has 3 or more times 8 than don't take this combo.",
+          type: 0,
+        },
+        {
+          combo: 45,
+          effect:
+            "Needs to visit Hospital visits for different medical reasons and Court for different issues, Life with Restrictions.",
+          type: 0,
+        },
+        {
+          combo: 54,
+          effect:
+            "Needs to visit Hospital visits for different medical reasons and Court for different issues, Life with Restrictions.",
+          type: 0,
+        },
+        {
+          combo: 46,
+          effect: "Extra relationship, Inter-cast marriage, UT infection.",
+          type: 0,
+        },
+        {
+          combo: 64,
+          effect: "Extra relationship, Inter-cast marriage, UT infection.",
+          type: 0,
+        },
+        {
+          combo: 48,
+          effect:
+            "(Very Negative) Blood related disease, Incurable problems, Deficiency in sexual pleasure.",
+          type: 0,
+        },
+        {
+          combo: 84,
+          effect:
+            "(Very Negative) Blood related disease, Incurable problems, Deficiency in sexual pleasure.",
+          type: 0,
+        },
+        {
+          combo: 67,
+          effect:
+            "Chances of Love marriage, Issue in Spouse health, Chances of disturbed married life.",
+          type: 0,
+        },
+        {
+          combo: 76,
+          effect:
+            "Chances of Love marriage, Issue in Spouse health, Chances of disturbed married life.",
+          type: 0,
+        },
+        {
+          combo: 68,
+          effect:
+            "Eye Problem, Issue in any one organ of Body… If multiple 1 in DOB than don’t recommend this combo.",
+          type: 0,
+        },
+        {
+          combo: 86,
+          effect:
+            "Eye Problem, Issue in any one organ of Body… If multiple 1 in DOB than don’t recommend this combo.",
+          type: 0,
+        },
+        {
+          combo: 89,
+          effect:
+            "Argumentative, Works with Principle, Person might get chronic issue in later part of life.",
+          type: 0,
+        },
+        {
+          combo: 98,
+          effect:
+            "Argumentative, Works with Principle, Person might get chronic issue in later part of life.",
+          type: 0,
+        },
+      ];
+
+      function showHideDiv(show, hide) {
+        $(`#${show}`).show();
+        $(`#${hide}`).hide();
+      }
+
+      function find() {
+        const numString = $("#numberInput").val();
+        if (numString == "" || numString == undefined) {
+          return alert("Please enter a valid number");
+        } else {
+          numberArr = numString.split(",");
+        }
+        console.log(numString, numberArr);
+
+        let mustExclude = [
+          14, 41, 16, 61, 18, 81, 23, 32, 26, 62, 27, 72, 28, 82, 34, 43, 45,
+          54, 46, 64, 48, 84, 67, 76, 68, 86, 89, 98, 36, 63, 49, 94, 58, 85,
+          99, 999, 88, 888, 77, 777, 666, 555, 444, 44, 333, 22, 222, 111,
+        ];
+
+        var htmlVar = document.getElementById("resultDiv");
+        numberArr.forEach((element) => {
+          pairs = convertToPairs(element);
+          const validNum = mustExclude.every((item) => !pairs.includes(item));
+          let compound = element.split("").reduce((a, b) => Number(a) + Number(b));
+          let sum = sumToOneDigit(element);
+          let goodCompound = !mustExclude.includes(compound);
+          let goodSum = sum == 1 || sum == 3 || sum == 5 || sum == 6 ? true : false;
+          allGood = validNum && goodCompound && goodSum ? true : false;
+          console.group(allGood, validNum, goodCompound, goodSum);
+          let allGoodClass =
+            allGood == true ? "allGoodClass borderCssCard" : "";
+          let html = `
+          <div class="col-lg-6 mx-auto mb-4">
+            <div class="shadow p-3 m-md-3 h-100">
+              <div class="shadow mb-3 p-3 ${allGoodClass}">
+              <span class="top"></span><span class="right"></span><span class="bottom"></span><span class="left"></span>
+                <div class="row mx-0 text-center">
+                  <h3 class="col-12">${element}</h3>
+                  <div class="col-12 m-auto">
+                    <div class="row mx-0 my-auto">
+                      <div class="col-5 px-0 h5 mb-0">Compound</div>
+                      <div class="col-2 px-0 h5 mb-0 text-center">:</div>
+                      <div class="col-5 h6 my-auto mb-0 text-italic">${compound}</div>
+                    </div>
+                  </div>
+                  <div class="col-12 m-auto">
+                    <div class="row mx-0 my-auto">
+                      <div class="col-5 px-0 h5 mb-0">Sum</div>
+                      <div class="col-2 px-0 h5 mb-0 text-center">:</div>
+                      <div class="col-5 h6 my-auto mb-0 text-italic">${sum}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row mx-0 shadow p-2">`;
+          pairs.forEach((pair) => {
+            for (let index = 0; index < masterArr.length; index++) {
+              const elem = masterArr[index];
+              if (pair == elem.combo) {
+                bgClass = elem.type == 0 ? "bg-danger" : elem.type == 1 ? "bg-success" : "bg-warning";
+                html += `<div class="col-2 col-md-1 text-center px-1 my-auto">
+                                  <div class="shadow p-2 ${bgClass}">${pair}</div>
+                                </div>
+                                <div class="col-10 col-md-11">
+                                  <div class="shadow p-2 mb-3">${elem.effect}</div>
+                                </div>`;
+              }
+            }
+          });
+          html += `
+              </div>
+            </div>
+          </div>`;
+          $(".wrapperDiv").append(html);
+          showHideDiv("resultDiv", "inputDiv");
+        });
+      }
+
+      function sumToOneDigit(num) {
+        while (num >= 10) {
+          let sum = 0;
+          while (num > 0) {
+            sum += num % 10;
+            num = Math.floor(num / 10);
+          }
+          num = sum;
+        }
+        return num;
+      }
+
+      function convertToPairs(number) {
+        let numberString = number.toString();
+        let pairs = [];
+        for (let i = 0; i < numberString.length - 1; i++) {
+          let pair = numberString.substring(i, i + 2);
+          pairs.push(parseInt(pair));
+        }
+        return pairs;
+      }
+
+      function reset() {
+        $("#numberInput").val("");
+        $(".wrapperDiv").html("");
+        showHideDiv("inputDiv", "resultDiv");
+      }
+
+      $(document).ready(() => {
+        // find();
+        showHideDiv("inputDiv", "resultDiv");
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
