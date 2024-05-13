@@ -116,9 +116,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mobile Number Numerology - Himanshu Sharma</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+    <script
+      disable-devtool-auto=""
+      src="https://cdn.jsdelivr.net/npm/disable-devtool"
+    ></script>
 
     <style>
       .centerdDiv {
@@ -283,7 +291,7 @@
     </style>
   </head>
   <body>
-    <input type="hidden" id="engLan" class="engLan" value="1">
+    <input type="hidden" id="engLan" class="engLan" value="1" />
     <div id="inputDiv">
       <div class="centerdDiv">
         <div class="row mx-0 justify-content-center">
@@ -307,67 +315,81 @@
 
     <div id="resultDiv" class="" style="display: none">
       <div class="text-end bg-light py-3 position-sticky top-0">
-        <button type="button" onclick="changeLang()" class="btn btn-outline-info me-3"><i class="fa fa-switch"></i>&nbsp;Change language</button>
-        <button type="button" onclick="reset()" class="btn btn-outline-info me-3"><i class="fa fa-times"></i>&nbsp;Change Number</button>
+        <button
+          type="button"
+          onclick="changeLang()"
+          class="btn btn-outline-info me-3"
+        >
+          <i class="fa fa-switch"></i>&nbsp;Change language
+        </button>
+        <button
+          type="button"
+          onclick="reset()"
+          class="btn btn-outline-info me-3"
+        >
+          <i class="fa fa-times"></i>&nbsp;Change Number
+        </button>
       </div>
       <div class="wrapperDiv row mx-0 p-3"></div>
     </div>
     <script>
       let numberArr = [];
       let mustExclude = [
-          14, 41, 16, 61, 18, 81, 23, 32, 26, 62, 27, 72, 28, 82, 34, 43, 45,
-          54, 46, 64, 48, 84, 67, 76, 68, 86, 89, 98, 36, 63, 49, 94, 58, 85,
-          99, 999, 88, 888, 77, 777, 666, 555, 444, 44, 333, 22, 222, 111,
-        ];
+        14, 41, 16, 61, 18, 81, 23, 32, 26, 62, 27, 72, 28, 82, 34, 43, 45, 54,
+        46, 64, 48, 84, 67, 76, 68, 86, 89, 98, 36, 63, 49, 94, 58, 85, 99, 999,
+        88, 888, 77, 777, 666, 555, 444, 44, 333, 22, 222, 111,
+      ];
 
       const masterEngArr = [
         {
           combo: 11,
-          effect: "Emotional, Ego, Attitude, communication and speaking fast",
+          effect:
+            "Emotional, prideful, with a strong attitude. Talks quickly and communicates well.",
           type: 1,
         },
         {
           combo: 22,
           effect:
-            "Mood swing, Depression, to much Emotional, BP problem, If name starting with B,K, R than 100% Emotional issue",
+            "Experiences mood swings, depression, and strong emotions. May have blood pressure problems. If your name starts with B, K, or R, emotional issues are even more likely.",
           type: 0,
         },
         {
           combo: 33,
-          effect: "Hungary for Knowledge, Less Grounded",
+          effect: "Curious and eager to learn, but can be impractical.",
           type: 2,
         },
         {
           combo: 44,
-          effect: "Delay, Struggle, Headache",
+          effect: "May experience delays, struggles, and headaches.",
           type: 0,
         },
         {
           combo: 55,
-          effect: "Lazy, lethargic, communication and money can increase",
+          effect:
+            "May be lazy or sluggish, but communication and money flow can improve.",
           type: 1,
         },
         {
           combo: 66,
           effect:
-            "Luxury lover, Travelling, At time not allowed to use at need",
+            "Enjoys luxury and travel, but may not always have what they need on hand.",
           type: 1,
         },
         {
           combo: 77,
           effect:
-            "Mood swings, Internal Disturbances, Spirituality, Over Thinking, Anxiety",
+            "Experiences mood swings, inner turmoil, and may be drawn to spirituality. May overthink and feel anxious.",
           type: 0,
         },
         {
           combo: 88,
-          effect: "Delay, Disturbance, Obstacles",
+          effect: "May face delays, disruptions, and obstacles.",
           type: 0,
         },
         {
           combo: 99,
           effect:
-            "Debt, Anger, Blood related issues, skin colour red tone, children can have this combo",
+            "May struggle with debt, anger, and blood-related issues. May have a reddish skin tone. Children can also have this combination.",
           type: 0,
         },
 
@@ -375,696 +397,719 @@
 
         {
           combo: 12,
-          effect: "Attractive face, saving person, Helpful life partner",
+          effect: "Looks good, Saves money, Good spouse",
           type: 1,
         },
         {
           combo: "13",
           effect:
-            "Good Advisor, Good Education, Respectful and Popular, Special in his circle, 31 combination makes person Professional",
+            "Gives good advice, Well-educated, Well-respected, Popular, Stands out in their group, 31 combo makes them professional",
           type: 1,
         },
         {
           combo: 31,
           effect:
-            "Good Advisor, Good Education, Respectful and Popular, Special in his circle, 31 combination makes person Professional",
+            "Gives good advice, Well-educated, Well-respected, Popular, Stands out in their group, 31 combo makes them professional",
           type: 1,
         },
         {
           combo: 15,
-          effect:
-            "Father's popularity, Generally these people make their father famous (good cause)",
+          effect: "Makes their father well-known (for good reasons)",
           type: 1,
         },
         {
           combo: 51,
-          effect:
-            "Father's popularity, Generally these people make their father famous (good cause)",
+          effect: "Makes their father well-known (for good reasons)",
           type: 1,
         },
         {
           combo: 25,
           effect:
-            "Hath me Shaffa, Can work in occult science/Medical line, One who gives Bail to others, Success through Air-Travel, Try to avoid stuff related to Finance.",
+            "Can work in mysterious studies/medicine, Helps others in trouble, Travels by air for success, Avoid finance-related things.",
           type: 1,
         },
         {
           combo: 52,
           effect:
-            "Hath me Shaffa, Can work in occult science/Medical line, One who gives Bail to others, Success through Air-Travel, Try to avoid stuff related to Finance.",
+            "Can work in mysterious studies/medicine, Helps others in trouble, Travels by air for success, Avoid finance-related things.",
           type: 1,
         },
         {
           combo: 29,
           effect:
-            "Person have decent amount of Money, Live happily on the money of Someone else, Native might become egoistic, If DOB 29 Relationship issues, Success through Air-Travel, Try to avoid stuff related to Finance.",
+            "Has good money, Lives comfortably on someone else's money (be careful of ego), Relationship issues if born on 29th, Travels by air for success, Avoid finance-related things.",
           type: 1,
         },
         {
           combo: 92,
           effect:
-            "Person have decent amount of Money, Live happily on the money of Someone else, Native might become egoistic, If DOB 29 Relationship issues, Success through Air-Travel, Try to avoid stuff related to Finance.",
+            "Has good money, Lives comfortably on someone else's money (be careful of ego), Relationship issues if born on 29th, Travels by air for success, Avoid finance-related things.",
           type: 1,
         },
         {
           combo: 73,
           effect:
-            "Complete personality, person would be able to take benefit from knowledge.",
+            "Well-rounded person, Learns well and uses knowledge to their advantage.",
           type: 1,
         },
         {
           combo: 37,
           effect:
-            "Complete personality, person would be able to take benefit from knowledge.",
+            "Well-rounded person, Learns well and uses knowledge to their advantage.",
           type: 1,
         },
         {
           combo: 38,
           effect:
-            "Real Estate, Counsellor, Peacemaker or mediator between Two parties.",
+            "Good at real estate, Advises others, Settles disputes between people.",
           type: 1,
         },
         {
           combo: 83,
           effect:
-            "Real Estate, Counsellor, Peacemaker or mediator between Two parties.",
+            "Good at real estate, Advises others, Settles disputes between people.",
           type: 1,
         },
         {
           combo: 47,
-          effect:
-            "Honest, Brilliant, gives importance of Integrity, Rahu-Ketu Combo.",
+          effect: "Honest, Intelligent, Values integrity (Rahu-Ketu Combo)",
           type: 1,
         },
         {
           combo: 74,
-          effect:
-            "Honest, Brilliant, gives importance of Integrity, Rahu-Ketu Combo.",
+          effect: "Honest, Intelligent, Values integrity (Rahu-Ketu Combo)",
           type: 1,
         },
         {
           combo: 57,
           effect:
-            "Speaker, writer, Public relation, Good Expressive person, Lot of person comes to them for Advice.",
+            "Good communicator, Can be a writer or public speaker, People seek advice from them.",
           type: 1,
         },
         {
           combo: 75,
           effect:
-            "Speaker, writer, Public relation, Good Expressive person, Lot of person comes to them for Advice.",
+            "Good communicator, Can be a writer or public speaker, People seek advice from them.",
           type: 1,
         },
         {
           combo: 69,
           effect:
-            "Good management skill, Good Planner, Opposite Sex involvement.",
+            "Good at managing things, Makes plans well, Might be attracted to the opposite sex.",
           type: 1,
         },
         {
           combo: 96,
           effect:
-            "Good management skill, Good Planner, Opposite Sex involvement.",
+            "Good at managing things, Makes plans well, Might be attracted to the opposite sex.",
           type: 1,
         },
         {
           combo: 78,
-          effect: "Healer, Idealistic, Solve any problem by own power.",
+          effect: "Can heal others, idealistic, Solves problems independently.",
           type: 1,
         },
         {
           combo: 87,
-          effect: "Healer, Idealistic, Solve any problem by own power.",
+          effect: "Can heal others, idealistic, Solves problems independently.",
           type: 1,
         },
 
-        // neutral
-
+        // Neutral
         {
           combo: 17,
           effect:
-            "Money related work is never stopped, There is someone in close circle who is in Govt. job, Person might be working in MNC and getting good facilities ex private- Good facilities/Work from Home, Chances of 2 Marriage , More profit from Lying, If DOB has many 7, than don't chose this combo, If 2,5,6 missing in DOB and Mobile has 17/71 will give majorrelationship issues",
+            "Steady income, Someone close in government job, Might work in MNC with good benefits (work from home possible), Chance of two marriages, Lying might bring more profit, Avoid if DOB has many 7s, Avoid if DOB lacks 2, 5, 6 and mobile number has 17/71 (relationship issues)",
           type: 2,
         },
         {
           combo: 71,
           effect:
-            "Money related work is never stopped, There is someone in close circle who is in Govt. job, Person might be working in MNC and getting good facilities ex private- Good facilities/Work from Home, Chances of 2 Marriage , More profit from Lying, If DOB has many 7, than don't chose this combo, If 2,5,6 missing in DOB and Mobile has 17/71 will give majorrelationship issues",
+            "Steady income, Someone close in government job, Might work in MNC with good benefits (work from home possible), Chance of two marriages, Lying might bring more profit, Avoid if DOB has many 7s, Avoid if DOB lacks 2, 5, 6 and mobile number has 17/71 (relationship issues)",
           type: 2,
         },
         {
           combo: 19,
           effect:
-            "You own what u want, Always on a high place, Professional person, Rasukhdar, dom Lover",
+            "Achieves goals, High position, Professional, Dominant, Passionate lover",
           type: 1,
         },
         {
           combo: 91,
           effect:
-            "You own what u want, Always on a high place, Professional person, Rasukhdar, dom Lover",
+            "Achieves goals, High position, Professional, Dominant, Passionate lover",
           type: 1,
         },
         {
           combo: 21,
-          effect: "Attractive face, waste of Money",
+          effect: "Looks good, Might spend money carelessly",
           type: 2,
         },
         {
           combo: 24,
           effect:
-            "Keep patience to achieve something, Makes different plans and brain actively processing those plans, negative/destructive thinking.",
+            "Needs patience to be successful, Makes many plans, Can be prone to negative thinking",
           type: 2,
         },
         {
           combo: 42,
           effect:
-            "Keep patience to achieve something, Makes different plans and brain actively processing those plans, negative/destructive thinking.",
+            "Needs patience to be successful, Makes many plans, Can be prone to negative thinking",
           type: 2,
         },
         {
           combo: 35,
           effect:
-            "Native gets success away from Home, Fear of Father, Hence Successful, Good Economical Condition, Liquid money problem.",
+            "Success away from home (due to fear of father?), Good financial situation, Might have trouble with cash flow.",
           type: 2,
         },
         {
           combo: 53,
           effect:
-            "Native gets success away from Home, Fear of Father, Hence Successful, Good Economical Condition, Liquid money problem.",
+            "Success away from home (due to fear of father?), Good financial situation, Might have trouble with cash flow.",
           type: 2,
         },
         {
           combo: 63,
           effect:
-            "More of Principal oriented person, Barrier in Studies , Good knowledge but native will struggle in presentation.",
+            "Prefers principles, Might face obstacles in studies, Has good knowledge but struggles to present it well.",
           type: 2,
         },
         {
           combo: 36,
           effect:
-            "More of Principal oriented person, Barrier in Studies , Good knowledge but native will struggle in presentation.",
+            "Prefers principles, Might face obstacles in studies, Has good knowledge but struggles to present it well.",
           type: 2,
         },
-
         {
           combo: 93,
-          effect:
-            "Loves to show-off, Person will have a lots of Duality in nature.",
+          effect: "Likes to show off, Can be indecisive at times.",
           type: 2,
         },
         {
           combo: 39,
-          effect:
-            "Loves to show-off, Person will have a lots of Duality in nature.",
+          effect: "Likes to show off, Can be indecisive at times.",
           type: 2,
         },
         {
           combo: 49,
-          effect: "Do risky work , Uniform work, Criminal minded.",
+          effect:
+            "Might take risks, Could be suited for jobs with uniforms, Prone to criminal activity.",
           type: 2,
         },
         {
           combo: 94,
-          effect: "Do risky work , Uniform work, Criminal minded.",
+          effect:
+            "Might take risks, Could be suited for jobs with uniforms, Prone to criminal activity.",
           type: 2,
         },
         {
           combo: 56,
           effect:
-            "Hesitate to ask own money, Apke ghar ke pass koi big landmark he kya Mandir/Superstore, Business minded",
+            "Might hesitate to ask for their own money. Business-minded. (Hindi: Any big landmarks near your house? Temple/Superstore)",
           type: 2,
         },
         {
           combo: 65,
           effect:
-            "Hesitate to ask own money, Apke ghar ke pass koi big landmark he kya Mandir/Superstore, Business minded",
+            "Might hesitate to ask for their own money. Business-minded. (Hindi: Any big landmarks near your house? Temple/Superstore)",
           type: 2,
         },
         {
           combo: 85,
           effect:
-            "Money stuck , Calculated mind, Person doing some work related to Money/Finance, Talks about Lakhs and Crores",
+            "Might have financial difficulties, Good with calculations, Works in finance-related field, Talks in big sums (lakhs and crores).",
           type: 2,
         },
         {
           combo: 58,
           effect:
-            "Money stuck , Calculated mind, Person doing some work related to Money/Finance, Talks about Lakhs and Crores",
+            "Might have financial difficulties, Good with calculations, Works in finance-related field, Talks in big sums (lakhs and crores).",
           type: 2,
         },
         {
           combo: 95,
           effect:
-            "Destroy relationship through Bad speech , Person opt for Science or commerce stream",
+            "Harsh words can damage relationships. Might choose Science or Commerce stream for studies.",
           type: 2,
         },
         {
           combo: 59,
           effect:
-            "Destroy relationship through Bad speech , Person opt for Science or commerce stream",
+            "Harsh words can damage relationships. Might choose Science or Commerce stream for studies.",
           type: 2,
         },
         {
           combo: 79,
-          effect: "Success after separation from Father.",
+          effect: "May find success after separation from father.",
           type: 2,
         },
         {
           combo: 97,
-          effect: "Success after separation from Father.",
+          effect: "May find success after separation from father.",
           type: 2,
         },
         {
           combo: 14,
           effect:
-            "Person can get attracted to Loan liabilities, Legal Notice, Health issues, Hard work, Toughness Number.",
+            "Prone to debt, legal issues, health problems. Requires hard work and resilience.",
           type: 0,
         },
         {
           combo: 41,
           effect:
-            "Person can get attracted to Loan liabilities, Legal Notice, Health issues, Hard work, Toughness Number.",
+            "Prone to debt, legal issues, health problems. Requires hard work and resilience.",
           type: 0,
         },
         {
           combo: 16,
           effect:
-            "(Most Negative) Spouse health issues, married life issues, income confined (Owners have less income at the time of having this mo. No.).",
+            "May face spouse's health issues, problems in married life, and limited income.",
           type: 0,
         },
         {
           combo: 61,
           effect:
-            "(Most Negative) Spouse health issues, married life issues, income confined (Owners have less income at the time of having this mo. No.).",
+            "May face spouse's health issues, problems in married life, and limited income.",
           type: 0,
         },
         {
           combo: 18,
           effect:
-            "(Very Negative) Spouse health issue, understanding issues in father & son, Govt. related issue, change in job frequently.",
+            "May face spouse's health issues, disagreements with father, government-related problems, and frequent job changes.",
           type: 0,
         },
         {
           combo: 81,
           effect:
-            "(Very Negative) Spouse health issue, understanding issues in father & son, Govt. related issue, change in job frequently.",
+            "May face spouse's health issues, disagreements with father, government-related problems, and frequent job changes.",
           type: 0,
         },
         {
           combo: 23,
           effect:
-            "Generally many enemy but none of them will be able to harm he native.",
+            "May have many enemies, but they won't be able to cause harm.",
           type: 0,
         },
         {
           combo: 32,
           effect:
-            "Generally many enemy but none of them will be able to harm he native.",
+            "May have many enemies, but they won't be able to cause harm.",
           type: 0,
         },
         {
           combo: 26,
           effect:
-            "Barrier in Studies or Break in education , Girl- Problem with mother in law, Attraction towards money or opposite sex, Chances of less Sperm count or Diabetes.",
+            "May experience educational delays, problems with mother-in-law, attraction towards money/opposite sex, and potential for low sperm count or diabetes.",
           type: 0,
         },
         {
           combo: 62,
           effect:
-            "Barrier in Studies or Break in education , Girl- Problem with mother in law, Attraction towards money or opposite sex, Chances of less Sperm count or Diabetes.",
+            "May experience educational delays, problems with mother-in-law, attraction towards money/opposite sex, and potential for low sperm count or diabetes.",
           type: 0,
         },
         {
           combo: 27,
           effect:
-            "Good intuition, Joint pain Or Urine related disease, Arthritis (Vaat Issue).",
+            "Good intuition, but may have joint pain, urinary problems, or arthritis.",
           type: 0,
         },
         {
           combo: 72,
           effect:
-            "Good intuition, Joint pain Or Urine related disease, Arthritis (Vaat Issue).",
+            "Good intuition, but may have joint pain, urinary problems, or arthritis.",
           type: 0,
         },
         {
           combo: 28,
           effect:
-            "Person have decent amount of Money, Excessive Medical/Hospital Expenditure, 2 marriages in the Family, Try to avoid Bad company it can Harm you, Vish yog.",
+            "May have good income, but also high medical expenses. Two marriages possible in the family. Avoid bad company. (Vish yog)",
           type: 0,
         },
         {
           combo: 82,
           effect:
-            "Person have decent amount of Money, Excessive Medical/Hospital Expenditure, 2 marriages in the Family, Try to avoid Bad company it can Harm you, Vish yog.",
+            "May have good income, but also high medical expenses. Two marriages possible in the family. Avoid bad company. (Vish yog)",
           type: 0,
         },
         {
           combo: 34,
           effect:
-            "Legs shivering, Paralysis to someone in the family, Breathing related issues to person, if DOB has 3 or more times 8 than don't take this combo.",
+            "Leg tremors, risk of paralysis in the family, breathing problems. Avoid this combo if your date of birth has 3 or more eights.",
           type: 0,
         },
         {
           combo: 43,
           effect:
-            "Legs shivering, Paralysis to someone in the family, Breathing related issues to person, if DOB has 3 or more times 8 than don't take this combo.",
+            "Leg tremors, risk of paralysis in the family, breathing problems. Avoid this combo if your date of birth has 3 or more eights.",
           type: 0,
         },
         {
           combo: 45,
           effect:
-            "Needs to visit Hospital visits for different medical reasons and Court for different issues, Life with Restrictions.",
+            "Frequent hospital visits for various health issues and court appearances for legal matters. Life with limitations.",
           type: 0,
         },
         {
           combo: 54,
           effect:
-            "Needs to visit Hospital visits for different medical reasons and Court for different issues, Life with Restrictions.",
+            "Frequent hospital visits for various health issues and court appearances for legal matters. Life with limitations.",
           type: 0,
         },
         {
           combo: 46,
-          effect: "Extra relationship, Inter-cast marriage, UT infection.",
+          effect:
+            "Indicates extramarital relationships, inter-caste marriage, and urinary tract infections.",
           type: 0,
         },
         {
           combo: 64,
-          effect: "Extra relationship, Inter-cast marriage, UT infection.",
+          effect:
+            "Indicates extramarital relationships, inter-caste marriage, and urinary tract infections.",
           type: 0,
         },
         {
           combo: 48,
           effect:
-            "(Very Negative) Blood related disease, Incurable problems, Deficiency in sexual pleasure.",
+            "(Very Negative) Health problems related to blood, Serious health issues, Difficulty having a satisfying sex life.",
           type: 0,
         },
         {
           combo: 84,
           effect:
-            "(Very Negative) Blood related disease, Incurable problems, Deficiency in sexual pleasure.",
+            "(Very Negative) Health problems related to blood, Serious health issues, Difficulty having a satisfying sex life.",
           type: 0,
         },
         {
           combo: 67,
           effect:
-            "Chances of Love marriage, Issue in Spouse health, Chances of disturbed married life.",
+            "Increased chance of love marriage, Partner might have health problems, Possibility of troubled married life.",
           type: 0,
         },
         {
           combo: 76,
           effect:
-            "Chances of Love marriage, Issue in Spouse health, Chances of disturbed married life.",
+            "Increased chance of love marriage, Partner might have health problems, Possibility of troubled married life.",
           type: 0,
         },
         {
           combo: 68,
           effect:
-            "Eye Problem, Issue in any one organ of Body… If multiple 1 in DOB than don’t recommend this combo.",
+            "Possible eye problems, Potential health issue in a single organ. Avoid this combo if your date of birth has multiple '1's.",
           type: 0,
         },
         {
           combo: 86,
           effect:
-            "Eye Problem, Issue in any one organ of Body… If multiple 1 in DOB than don’t recommend this combo.",
+            "Possible eye problems, Potential health issue in a single organ. Avoid this combo if your date of birth has multiple '1's.",
           type: 0,
         },
         {
           combo: 89,
           effect:
-            "Argumentative, Works with Principle, Person might get chronic issue in later part of life.",
+            "Likes to argue, Sticks to principles, Might develop chronic health problems later in life.",
           type: 0,
         },
         {
           combo: 98,
           effect:
-            "Argumentative, Works with Principle, Person might get chronic issue in later part of life.",
+            "Likes to argue, Sticks to principles, Might develop chronic health problems later in life.",
           type: 0,
         },
       ];
 
-
+      // Google Bard Translated
       const masterHinArr = [
         {
           combo: 11,
-          effect: "भावनात्मक, अहंकार, रवैया, संचार और तेज़ बोलना",
+          effect:
+            "भावुक (Bhavuk), अहंकार (Ahankar), रूख (Rukh), संवाद (Samvad) और तेजी से बोलना (Tezi se bolna)",
           type: 1,
         },
         {
           combo: 22,
-          effect: "मूड स्विंग, डिप्रेशन, बहुत ज्यादा भावनात्मक, बीपी समस्या, नाम का आरंभ B, K, या R से हो तो 100% भावनात्मक समस्या",
+          effect:
+            "मनःस्थिति का परिवर्तन (Manahstithi ka Parivartan), अवसाद (Avsaad), बहुत ज्यादा भावुक (Bahut zyada bhavuk), रक्तचाप की समस्या (Raktachhap ki samasya)",
           type: 0,
         },
         {
           combo: 33,
-          effect: "ज्ञान के लिए भूखा, कम आधारित",
+          effect: "ज्ञान की भूख (Gyan ki bhukh), कम जमीनी (Kam Jamiini)",
           type: 2,
         },
         {
           combo: 44,
-          effect: "देरी, संघर्ष, सिरदर्द",
+          effect: "देरी (Deri), संघर्ष (Sangharsh), सिरदर्द (Sirdard)",
           type: 0,
         },
         {
           combo: 55,
-          effect: "सुस्त, आलसी, संचार और पैसे बढ़ सकते हैं",
+          effect:
+            "आलसी (Aalsi), सुस्त (Sust), संवाद और पैसा बढ़ सकता है (Samvad aur Paisa badh sakta hai)",
           type: 1,
         },
         {
           combo: 66,
-          effect: "शोभायात्रा प्रेमी, यात्रा, कभी-कभी जरूरत पर उपयोग करने की अनुमति नहीं",
+          effect:
+            "विलासिता का प्रेमी (Vilasita ka premi), यात्रा (Yatra), कभी-कभी जरूरत के समय उपयोग करने की अनुमति नहीं (Kabhi-kabhi jarurat ke समय upyog karne ki anumati nahin)",
           type: 1,
         },
         {
           combo: 77,
-          effect: "मूड स्विंग, आंतरिक बाधाएँ, आध्यात्मिकता, अत्यधिक सोच, चिंता",
+          effect:
+            "मनःस्थिति का परिवर्तन (Manahstithi ka Parivartan), आंतरिक अशांति (Aantirik Asthanti), आध्यात्मिकता (Adhyatmikta), सोचने की अधिकता (Sochne ki adhikta), चिंता (Chinta)",
           type: 0,
         },
         {
           combo: 88,
-          effect: "देरी, व्यवधान, अवरोध",
+          effect: "देरी (Deri), अशांति (Asthanti), बाधाएं (Badhae)",
           type: 0,
         },
         {
           combo: 99,
-          effect: "कर्ज, गुस्सा, रक्त संबंधी समस्याएँ, त्वचा का रंग लाल ध्वनि, बच्चे इस कॉम्बो को प्राप्त कर सकते हैं",
+          effect:
+            "ऋण (Rin), गुस्सा (Gussa), रक्त सम्बन्धी समस्याएं (Rakta Sambandhi Samasyayen), त्वचा का रंग लाल (Twacha ka rang lal)",
           type: 0,
         },
-
-        // upper to be checked
-
         {
           combo: 12,
-          effect: "आकर्षक चेहरा, बचाव करने वाला व्यक्ति, सहायक जीवन साथी",
+          effect: "आकर्षक चेहरा, बचत करने वाला व्यक्ति, सहायक जीवन साथी",
           type: 1,
         },
         {
-          combo: "13",
-          effect: "अच्छे सलाहकार, अच्छी शिक्षा, सम्मानीय और लोकप्रिय, अपने चक्कर में विशेष, 31 का संयोजन व्यक्ति को पेशेवर बना देता है",
+          combo: 13,
+          effect:
+            "अच्छा सलाहकार, अच्छी शिक्षा, सम्मानित और लोकप्रिय, अपने दायरे में विशेष, 31 संयोजन व्यक्ति को पेशेवर बनाता है",
           type: 1,
         },
         {
           combo: 31,
-          effect: "अच्छे सलाहकार, अच्छी शिक्षा, सम्मानीय और लोकप्रिय, अपने चक्कर में विशेष, 31 का संयोजन व्यक्ति को पेशेवर बना देता है",
+          effect:
+            "अच्छा सलाहकार, अच्छी शिक्षा, सम्मानित और लोकप्रिय, अपने दायरे में विशेष, 31 संयोजन व्यक्ति को पेशेवर बनाता है",
           type: 1,
         },
         {
           combo: 15,
-          effect: "पिता की पॉपुलैरिटी, आम तौर पर ये लोग अपने पिता को प्रसिद्ध करते हैं (अच्छे कारण के लिए)",
+          effect:
+            "पिता की लोकप्रियता, आम तौर पर ये लोग अपने पिता को प्रसिद्ध बनाते हैं (अच्छा कारण)",
           type: 1,
         },
         {
           combo: 51,
-          effect: "पिता की पॉपुलैरिटी, आम तौर पर ये लोग अपने पिता को प्रसिद्ध करते हैं (अच्छे कारण के लिए)",
+          effect:
+            "पिता की लोकप्रियता, आम तौर पर ये लोग अपने पिता को प्रसिद्ध बनाते हैं (अच्छा कारण)",
           type: 1,
         },
         {
           combo: 25,
-          effect: "हाथ में शफा, अन्धविश्वास विज्ञान/चिकित्सा लाइन में काम कर सकते हैं, अन्यों को जमाने वाला, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+          effect:
+            "हाथ में शफ्फा, गुप्त विज्ञान/चिकित्सा क्षेत्र में काम कर सकते हैं, जो दूसरों को जमानत देता है, हवाई यात्रा के माध्यम से सफलता, वित्त से जुड़े मामलों से बचने की कोशिश करें।",
           type: 1,
         },
         {
           combo: 52,
-          effect: "हाथ में शफा, अन्धविश्वास विज्ञान/चिकित्सा लाइन में काम कर सकते हैं, अन्यों को जमाने वाला, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+          effect:
+            "हाथ में शफ्फा, गुप्त विज्ञान/चिकित्सा क्षेत्र में काम कर सकते हैं, जो दूसरों को जमानत देता है, हवाई यात्रा के माध्यम से सफलता, वित्त से जुड़े मामलों से बचने की कोशिश करें।",
           type: 1,
         },
         {
           combo: 29,
-          effect: "व्यक्ति के पास समय की अच्छी मात्रा है, किसी अन्य के पैसे पर खुशहाल जीवन जीना, नेटिव अहंकारी हो सकता है, यदि जन्मतिथि 29 है तो संबंध संबंधी मुद्दे, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+          effect:
+            "व्यक्ति के पास अच्छी खासी धनराशि होती है, किसी और के धन से खुशी से रहता है, जातक अहंकारी बन सकता है, यदि जन्म तिथि 29 है तो संबंध समस्याएं, हवाई यात्रा के माध्यम से सफलता, वित्त से जुड़े मामलों से बचने की कोशिश करें।",
           type: 1,
         },
         {
           combo: 92,
-          effect: "व्यक्ति के पास समय की अच्छी मात्रा है, किसी अन्य के पैसे पर खुशहाल जीवन जीना, नेटिव अहंकारी हो सकता है, यदि जन्मतिथि 29 है तो संबंध संबंधी मुद्दे, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+          effect:
+            "व्यक्ति के पास अच्छी खासी धनराशि होती है, किसी और के धन से खुशी से रहता है, जातक अहंकारी बन सकता है, यदि जन्म तिथि 29 है तो संबंध समस्याएं, हवाई यात्रा के माध्यम से सफलता, वित्त से जुड़े मामलों से बचने की कोशिश करें।",
           type: 1,
         },
         {
           combo: 73,
-          effect:
-          "पूर्ण व्यक्तित्व, व्यक्ति ज्ञान से लाभ उठा सकेगा।",
+          effect: "पूर्ण व्यक्तित्व, व्यक्ति ज्ञान का लाभ उठा सकेगा।",
           type: 1,
         },
         {
           combo: 37,
-          effect:
-          "पूर्ण व्यक्तित्व, व्यक्ति ज्ञान से लाभ उठा सकेगा।",
+          effect: "पूर्ण व्यक्तित्व, व्यक्ति ज्ञान का लाभ उठा सकेगा।",
           type: 1,
         },
         {
           combo: 38,
-          effect: "रियल एस्टेट, सलाहकार, दो पक्षों के बीच शांति स्थापित करने वाला या मध्यस्थता करने वाला।",
+          effect: "रियल स्टेट, काउंसलर, शांतिदूत या दो पक्षों के बीच मध्यस्थ।",
           type: 1,
         },
         {
           combo: 83,
-          effect: "रियल एस्टेट, सलाहकार, दो पक्षों के बीच शांति स्थापित करने वाला या मध्यस्थता करने वाला।",
+          effect: "रियल स्टेट, काउंसलर, शांतिदूत या दो पक्षों के बीच मध्यस्थ।",
           type: 1,
         },
         {
           combo: 47,
-          effect: "ईमानदार, प्रतिभाशाली, अखंडता का महत्व देता है, राहु-केतु संयोजन।",
+          effect:
+            "ईमानदार, बुद्धिमान, सत्यनिष्ठा का महत्व देता है, राहु-केतु कॉम्बो।",
           type: 1,
         },
         {
           combo: 74,
-          effect: "ईमानदार, प्रतिभाशाली, अखंडता का महत्व देता है, राहु-केतु संयोजन।",
+          effect:
+            "ईमानदार, बुद्धिमान, सत्यनिष्ठा का महत्व देता है, राहु-केतु कॉम्बो।",
           type: 1,
         },
         {
           combo: 57,
-          effect: "वक्ता, लेखक, सार्वजनिक संबंध, अच्छे अभिव्यक्ति वाला व्यक्ति, बहुत सारे लोग उनसे सलाह के लिए आते हैं।",
+          effect:
+            "वक्ता, लेखक, जनसंपर्क, अच्छा अभिव्यक्तिपूर्ण व्यक्ति, बहुत से लोग सलाह के लिए उनके पास आते हैं।",
           type: 1,
         },
         {
           combo: 75,
-          effect: "वक्ता, लेखक, सार्वजनिक संबंध, अच्छे अभिव्यक्ति वाला व्यक्ति, बहुत सारे लोग उनसे सलाह के लिए आते हैं।",
+          effect:
+            "वक्ता, लेखक, जनसंपर्क, अच्छा अभिव्यक्तिपूर्ण व्यक्ति, बहुत से लोग सलाह के लिए उनके पास आते हैं।",
           type: 1,
         },
         {
           combo: 69,
-          effect: "अच्छा प्रबंधन कौशल, अच्छा योजनाकार, विपरीत लिंग का संलग्नता।",
+          effect: "अच्छा प्रबंधन कौशल, अच्छा योजनाकार, विपरीत लिंग का जुड़ाव।",
           type: 1,
         },
         {
           combo: 96,
-          effect: "अच्छा प्रबंधन कौशल, अच्छा योजनाकार, विपरीत लिंग का संलग्नता।",
+          effect: "अच्छा प्रबंधन कौशल, अच्छा योजनाकार, विपरीत लिंग का जुड़ाव।",
           type: 1,
         },
         {
           combo: 78,
-          effect: "चिकित्सक, आदर्शवादी, अपनी शक्ति से किसी भी समस्या का समाधान।",
+          effect: "हीलर, आदर्शवादी, किसी भी समस्या का समाधान अपने बल पर करें।",
           type: 1,
         },
         {
           combo: 87,
-          effect: "चिकित्सक, आदर्शवादी, अपनी शक्ति से किसी भी समस्या का समाधान।",
+          effect: "हीलर, आदर्शवादी, किसी भी समस्या का समाधान अपने बल पर करें।",
           type: 1,
         },
-
-        // neutral
-
         {
           combo: 17,
-          effect: "पैसे से संबंधित काम कभी भी बंद नहीं होता, किसी को सर्किल में सरकारी नौकरी में होने वाला होता है, व्यक्ति MNC में काम कर रहा हो सकता है और अच्छी सुविधाएं प्राप्त कर रहा है जैसे कि निजी - अच्छी सुविधाएँ/गृह से काम, 2 विवाह के अवसर, झूठ बोलने से अधिक लाभ, जन्मतिथि में कई 7 हैं तो इस कॉम्बो को न चुनें, अगर जन्मतिथि में 2, 5, 6 गायब हैं और मोबाइल में 17/71 है तो प्रमुख संबंध समस्याएं होंगी।",
+          effect:
+            "धन से संबंधित कार्य कभी रुके नहीं, करीबी लोगों में से कोई सरकारी नौकरी में है, व्यक्ति किसी MNC में काम कर सकता है और अच्छी सुविधाएं प्राप्त कर सकता है, उदाहरण के लिए निजी क्षेत्र में - अच्छी सुविधाएं/घर से काम, 2 विवाह की संभावना, झूठ बोलने से अधिक लाभ, यदि जन्मतिथि में बहुत अधिक 7 हों, तो इस संयोजन को न चुनें, यदि जन्मतिथि और मोबाइल में 2,5,6 अंक गुम हैं और 17/71 है तो प्रमुख संबंध समस्याएं होंगी",
           type: 2,
         },
         {
           combo: 71,
-          effect: "पैसे से संबंधित काम कभी भी बंद नहीं होता, किसी को सर्किल में सरकारी नौकरी में होने वाला होता है, व्यक्ति MNC में काम कर रहा हो सकता है और अच्छी सुविधाएं प्राप्त कर रहा है जैसे कि निजी - अच्छी सुविधाएँ/गृह से काम, 2 विवाह के अवसर, झूठ बोलने से अधिक लाभ, जन्मतिथि में कई 7 हैं तो इस कॉम्बो को न चुनें, अगर जन्मतिथि में 2, 5, 6 गायब हैं और मोबाइल में 17/71 है तो प्रमुख संबंध समस्याएं होंगी।",
+          effect:
+            "धन से संबंधित कार्य कभी रुके नहीं, करीबी लोगों में से कोई सरकारी नौकरी में है, व्यक्ति किसी MNC में काम कर सकता है और अच्छी सुविधाएं प्राप्त कर सकता है, उदाहरण के लिए निजी क्षेत्र में - अच्छी सुविधाएं/घर से काम, 2 विवाह की संभावना, झूठ बोलने से अधिक लाभ, यदि जन्मतिथि में बहुत अधिक 7 हों, तो इस संयोजन को न चुनें, यदि जन्मतिथि और मोबाइल में 2,5,6 अंक गुम हैं और 17/71 है तो प्रमुख संबंध समस्याएं होंगी",
           type: 2,
         },
         {
           combo: 19,
-          effect: "आप जो भी चाहते हैं, उसका मालिक होते हैं, हमेशा ऊंची जगह पर होते हैं, पेशेवर व्यक्ति, रसुखदार, डॉम लवर।",
+          effect:
+            "आप जो चाहते हैं वह आपके पास है, हमेशा ऊँचे स्थान पर रहते हैं, पेशेवर व्यक्ति, दबंग, प्रेमी",
           type: 1,
         },
         {
           combo: 91,
-          effect: "आप जो भी चाहते हैं, उसका मालिक होते हैं, हमेशा ऊंची जगह पर होते हैं, पेशेवर व्यक्ति, रसुखदार, डॉम लवर।",
+          effect:
+            "आप जो चाहते हैं वह आपके पास है, हमेशा ऊँचे स्थान पर रहते हैं, पेशेवर व्यक्ति, दबंग, प्रेमी",
           type: 1,
         },
         {
           combo: 21,
-          effect: "आकर्षक चेहरा, पैसे का अपव्यय।",
+          effect: "आकर्षक चेहरा, धन की बर्बादी",
           type: 2,
         },
         {
           combo: 24,
-          effect: "कुछ प्राप्त करने के लिए धैर्य बनाए रखें, विभिन्न योजनाएं बनाते हैं और दिमाग उन योजनाओं को सक्रिय रूप से प्रसंस्करण करता है, नकारात्मक/विनाशकारी सोच।",
+          effect:
+            "कुछ हासिल करने के लिए धैर्य रखें, विभिन्न योजनाएँ बनाता है और मस्तिष्क सक्रिय रूप से उन योजनाओं को संसाधित करता है, नकारात्मक/विनाशकारी सोच।",
           type: 2,
         },
         {
           combo: 42,
-          effect: "कुछ प्राप्त करने के लिए धैर्य बनाए रखें, विभिन्न योजनाएं बनाते हैं और दिमाग उन योजनाओं को सक्रिय रूप से प्रसंस्करण करता है, नकारात्मक/विनाशकारी सोच।",
+          effect:
+            "कुछ हासिल करने के लिए धैर्य रखें, विभिन्न योजनाएँ बनाता है और मस्तिष्क सक्रिय रूप से उन योजनाओं को संसाधित करता है, नकारात्मक/विनाशकारी सोच।",
           type: 2,
         },
         {
           combo: 35,
-          effect: "नेटिव को घर से दूर सफलता मिलती है, पिता का डर, इसलिए सफल, अच्छी आर्थिक स्थिति, तरल धन की समस्या।",
+          effect:
+            "देशी को घर से दूर सफलता मिलती है, पिता का डर, इसलिए सफल, अच्छी आर्थिक स्थिति, तरल धन की समस्या।",
           type: 2,
         },
         {
           combo: 53,
-          effect: "नेटिव को घर से दूर सफलता मिलती है, पिता का डर, इसलिए सफल, अच्छी आर्थिक स्थिति, तरल धन की समस्या।",
+          effect:
+            "देशी को घर से दूर सफलता मिलती है, पिता का डर, इसलिए सफल, अच्छी आर्थिक स्थिति, तरल धन की समस्या।",
           type: 2,
         },
         {
           combo: 63,
-          effect: "अधिकांश सिद्धांत उत्साहित व्यक्ति, अध्ययन में बाधा, अच्छा ज्ञान लेकिन नेटिव प्रस्तुति में संघर्ष करेगा।",
+          effect:
+            "अधिक सिद्धांतवादी व्यक्ति, पढ़ाई में बाधा, अच्छा ज्ञान लेकिन प्रस्तुति में जातक संघर्ष करेगा।",
           type: 2,
         },
         {
           combo: 36,
-          effect: "अधिकांश सिद्धांत उत्साहित व्यक्ति, अध्ययन में बाधा, अच्छा ज्ञान लेकिन नेटिव प्रस्तुति में संघर्ष करेगा।",
+          effect:
+            "अधिक सिद्धांतवादी व्यक्ति, पढ़ाई में बाधा, अच्छा ज्ञान लेकिन प्रस्तुति में जातक संघर्ष करेगा।",
           type: 2,
         },
-
         {
           combo: 93,
-          effect: "दिखावा करने का शौक, व्यक्ति की प्रकृति में बहुत सारी द्वैतता होगी।",
+          effect:
+            "दिखावा करना पसंद है, व्यक्ति में बहुत अधिक द्वैध प्रकृति होगी।",
           type: 2,
         },
         {
           combo: 39,
-          effect: "दिखावा करने का शौक, व्यक्ति की प्रकृति में बहुत सारी द्वैतता होगी।",
+          effect:
+            "दिखावा करना पसंद है, व्यक्ति में बहुत अधिक द्वैध प्रकृति होगी।",
           type: 2,
         },
         {
           combo: 49,
-          effect: "जोखिमपूर्ण काम करें, वर्दी का काम, अपराधी मनोवृत्ति।",
+          effect: "जोखिम भरा काम करते हैं, वर्दी वाला काम, अपराधी प्रवृत्ति।",
           type: 2,
         },
         {
           combo: 94,
-          effect: "जोखिमपूर्ण काम करें, वर्दी का काम, अपराधी मनोवृत्ति।",
+          effect: "जोखिम भरा काम करते हैं, वर्दी वाला काम, अपराधी प्रवृत्ति।",
           type: 2,
         },
         {
           combo: 56,
-          effect: "अपने पैसे के लिए हक मांगने में हिचकिचाहट, आपके घर के पास कोई बड़ा संकेत है क्या मंदिर/सुपरस्टोर, व्यवसाय मंदिर।",
+          effect:
+            "अपने पैसे मांगने में संकोच करते हैं, क्या आपके घर के पास कोई बड़ा लैंडमार्क है मंदिर/सुपरस्टोर, व्यापारिक दिमाग।",
           type: 2,
         },
         {
           combo: 65,
-          effect: "अपने पैसे के लिए हक मांगने में हिचकिचाहट, आपके घर के पास कोई बड़ा संकेत है क्या मंदिर/सुपरस्टोर, व्यवसाय मंदिर।",
+          effect:
+            "अपने पैसे मांगने में संकोच करते हैं, क्या आपके घर के पास कोई बड़ा लैंडमार्क है मंदिर/सुपरस्टोर, व्यापारिक दिमाग।",
           type: 2,
         },
         {
           combo: 85,
-          effect: "पैसे अटके, गणनात्मक मन, व्यक्ति कुछ ऐसा काम कर रहा है जो पैसे/वित्त से संबंधित है, लाखों और करोड़ों की बातें करता है।",
+          effect:
+            "धन फंसा हुआ है, गणनात्मक दिमाग, धन/वित्त से संबंधित कुछ कार्य करने वाला व्यक्ति, लाखों और करोड़ों की बात करता है।",
           type: 2,
         },
         {
           combo: 58,
-          effect: "पैसे अटके, गणनात्मक मन, व्यक्ति कुछ ऐसा काम कर रहा है जो पैसे/वित्त से संबंधित है, लाखों और करोड़ों की बातें करता है।",
+          effect:
+            "धन फंसा हुआ है, गणनात्मक दिमाग, धन/वित्त से संबंधित कुछ कार्य करने वाला व्यक्ति, लाखों और करोड़ों की बात करता है।",
           type: 2,
         },
         {
           combo: 95,
-          effect: "खराब भाषा के माध्यम से संबंध नष्ट करें, व्यक्ति विज्ञान या वाणिज्य धारा का चयन करता है।",
+          effect:
+            "बुरी वाणी से रिश्ते को खराब करना, व्यक्ति विज्ञान या वाणिज्य धारा का विकल्प चुनता है।",
           type: 2,
         },
         {
           combo: 59,
-          effect: "खराब भाषा के माध्यम से संबंध नष्ट करें, व्यक्ति विज्ञान या वाणिज्य धारा का चयन करता है।",
+          effect:
+            "बुरी वाणी से रिश्ते को खराब करना, व्यक्ति विज्ञान या वाणिज्य धारा का विकल्प चुनता है।",
           type: 2,
         },
         {
@@ -1079,154 +1124,1080 @@
         },
         {
           combo: 14,
-          effect: "व्यक्ति ऋण दायित्व, कानूनी नोटिस, स्वास्थ्य समस्याएँ, कठिन काम, कठिनता नंबर को आकर्षित हो सकता है।",
+          effect:
+            "व्यक्ति ऋण दायित्वों, कानूनी नोटिस, स्वास्थ्य समस्याओं, कड़ी मेहनत, कठिन संख्याओं की ओर आकर्षित हो सकता है।",
           type: 0,
         },
         {
           combo: 41,
-          effect: "व्यक्ति ऋण दायित्व, कानूनी नोटिस, स्वास्थ्य समस्याएँ, कठिन काम, कठिनता नंबर को आकर्षित हो सकता है।",
+          effect:
+            "व्यक्ति ऋण दायित्वों, कानूनी नोटिस, स्वास्थ्य समस्याओं, कड़ी मेहनत, कठिन संख्याओं की ओर आकर्षित हो सकता है।",
           type: 0,
         },
         {
           combo: 16,
-          effect: "(सबसे नकारात्मक) पति के स्वास्थ्य समस्याएँ, विवाहित जीवन समस्याएँ, आय सीमित (मालिकों को इस महीने की संख्या के समय कम आय होती है)।",
+          effect:
+            "(सबसे नकारात्मक) जीवनसाथी के स्वास्थ्य संबंधी समस्याएं, वैवाहिक जीवन की समस्याएं, आय सीमित (इस मोबाइल नंबर के समय मालिकों की आय कम होती है)।",
           type: 0,
         },
         {
           combo: 61,
-          effect: "(सबसे नकारात्मक) पति के स्वास्थ्य समस्याएँ, विवाहित जीवन समस्याएँ, आय सीमित (मालिकों को इस महीने की संख्या के समय कम आय होती है)।",
+          effect:
+            "(सबसे नकारात्मक) जीवनसाथी के स्वास्थ्य संबंधी समस्याएं, वैवाहिक जीवन की समस्याएं, आय सीमित (इस मोबाइल नंबर के समय मालिकों की आय कम होती है)।",
           type: 0,
         },
         {
           combo: 18,
-          effect: "(बहुत नकारात्मक) पति के स्वास्थ्य समस्या, पिता और पुत्र में समझौता, सरकार संबंधित समस्या, नौकरी को बदलना बार-बार।",
+          effect:
+            "(बहुत नकारात्मक) जीवनसाथी के स्वास्थ्य संबंधी समस्याएं, पिता और पुत्र में समझ की समस्या, सरकारी संबंधित समस्या, नौकरी में बार-बार बदलाव।",
           type: 0,
         },
         {
           combo: 81,
-          effect: "(बहुत नकारात्मक) पति के स्वास्थ्य समस्या, पिता और पुत्र में समझौता, सरकार संबंधित समस्या, नौकरी को बदलना बार-बार।",
+          effect:
+            "(बहुत नकारात्मक) जीवनसाथी के स्वास्थ्य संबंधी समस्याएं, पिता और पुत्र में समझ की समस्या, सरकारी संबंधित समस्या, नौकरी में बार-बार बदलाव।",
           type: 0,
         },
         {
           combo: 23,
-          effect: "आमतौर पर कई दुश्मन होते हैं, लेकिन उनमें से कोई भी नेटिव को हानि नहीं पहुंचा सकता।",
+          effect:
+            "आम तौर पर कई दुश्मन होते हैं, लेकिन उनमें से कोई भी जातक को नुकसान नहीं पहुंचा पाएगा।",
           type: 0,
         },
         {
           combo: 32,
-          effect: "आमतौर पर कई दुश्मन होते हैं, लेकिन उनमें से कोई भी नेटिव को हानि नहीं पहुंचा सकता।",
+          effect:
+            "आम तौर पर कई दुश्मन होते हैं, लेकिन उनमें से कोई भी जातक को नुकसान नहीं पहुंचा पाएगा।",
           type: 0,
         },
         {
           combo: 26,
-          effect: "अध्ययन में बाधा या शिक्षा में विराम, लड़की- सास समस्या, पैसे या विपरीत लिंग की ओर आकर्षण, कम स्पर्म गिनती या मधुमेह के अवसर।",
+          effect:
+            "पढ़ाई में बाधा या शिक्षा में रुकावट, लड़की - सास के साथ समस्या, धन या विपरीत लिंग के प्रति आकर्षण, शुक्राणुओं की संख्या कम होने या मधुमेह की संभावना।",
           type: 0,
         },
         {
           combo: 62,
-          effect: "अध्ययन में बाधा या शिक्षा में विराम, लड़की- सास समस्या, पैसे या विपरीत लिंग की ओर आकर्षण, कम स्पर्म गिनती या मधुमेह के अवसर।",
+          effect:
+            "पढ़ाई में बाधा या शिक्षा में रुकावट, लड़की - सास के साथ समस्या, धन या विपरीत लिंग के प्रति आकर्षण, शुक्राणुओं की संख्या कम होने या मधुमेह की संभावना।",
           type: 0,
         },
         {
           combo: 27,
-          effect: "अच्छा अनुभव, जोड़ों में दर्द या मूत्र संबंधित बीमारी, गठिया (वात इस्यू)।",
+          effect:
+            "अच्छा अंतर्ज्ञान, जोड़ों का दर्द या मूत्र संबंधी रोग, गठिया (वात रोग)।",
           type: 0,
         },
         {
           combo: 72,
-          effect: "अच्छा अनुभव, जोड़ों में दर्द या मूत्र संबंधित बीमारी, गठिया (वात इस्यू)।",
+          effect:
+            "अच्छा अंतर्ज्ञान, जोड़ों का दर्द या मूत्र संबंधी रोग, गठिया (वात रोग)।",
           type: 0,
         },
         {
           combo: 28,
-          effect: "व्यक्ति के पास मामूली धन है, अत्यधिक चिकित्सा / अस्पताल व्यय, परिवार में 2 शादियाँ, बुरी कंपनी से बचें यह आपको नुकसान पहुंचा सकती है, विष योग।",
+          effect:
+            "व्यक्ति के पास अच्छी खासी धनराशि होती है, अत्यधिक चिकित्सा/अस्पताल व्यय, परिवार में 2 विवाह, बुरी संगति से बचने की कोशिश करें यह आपको नुकसान पहुंचा सकती है, विष योग।",
           type: 0,
         },
         {
           combo: 82,
-          effect: "व्यक्ति के पास मामूली धन है, अत्यधिक चिकित्सा / अस्पताल व्यय, परिवार में 2 शादियाँ, बुरी कंपनी से बचें यह आपको नुकसान पहुंचा सकती है, विष योग।",
+          effect:
+            "व्यक्ति के पास अच्छी खासी धनराशि होती है, अत्यधिक चिकित्सा/अस्पताल व्यय, परिवार में 2 विवाह, बुरी संगति से बचने की कोशिश करें यह आपको नुकसान पहुंचा सकती है, विष योग।",
           type: 0,
         },
         {
           combo: 34,
-          effect: "पैर कांपना, परिवार में किसी को लकवा, व्यक्ति को श्वसन संबंधित समस्याएँ, अगर जन्म तिथि में 3 या अधिक बार 8 होता है तो इस कॉम्बो को न लें।",
+          effect:
+            "पैर कांपना, परिवार में किसी को लकवा, व्यक्ति को सांस संबंधी समस्याएं, अगर जन्मतिथि में 3 या उससे अधिक बार 8 है तो यह जंबो न लें।",
           type: 0,
         },
         {
           combo: 43,
-          effect: "पैर कांपना, परिवार में किसी को लकवा, व्यक्ति को श्वसन संबंधित समस्याएँ, अगर जन्म तिथि में 3 या अधिक बार 8 होता है तो इस कॉम्बो को न लें।",
+          effect:
+            "पैर कांपना, परिवार में किसी को लकवा, व्यक्ति को सांस संबंधी समस्याएं, अगर जन्मतिथि में 3 या उससे अधिक बार 8 है तो यह जंबो न लें।",
           type: 0,
         },
         {
           combo: 45,
-          effect: "अलग-अलग चिकित्सा कारणों के लिए अस्पताल जाने की जरूरत है और न्यायालय में विभिन्न मुद्दों के लिए, प्रतिबंधित जीवन।",
+          effect:
+            "अलग-अलग चिकित्सीय कारणों से अस्पताल का दौरा करना पड़ता है और विभिन्न मुद्दों के लिए न्यायालय जाना पड़ता है, जीवन प्रतिबंधों के साथ।",
           type: 0,
         },
         {
           combo: 54,
-          effect: "अलग-अलग चिकित्सा कारणों के लिए अस्पताल जाने की जरूरत है और न्यायालय में विभिन्न मुद्दों के लिए, प्रतिबंधित जीवन।",
+          effect:
+            "अलग-अलग चिकित्सीय कारणों से अस्पताल का दौरा करना पड़ता है और विभिन्न मुद्दों के लिए न्यायालय जाना पड़ता है, जीवन प्रतिबंधों के साथ।",
           type: 0,
         },
         {
           combo: 46,
-          effect: "अतिरिक्त संबंध, अंतर जाति विवाह, मूत्रमार्ग संक्रमण।",
+          effect: "अतिरिक्त संबंध, अंतर-जातीय विवाह, यूटी संक्रमण।",
           type: 0,
         },
         {
           combo: 64,
-          effect: "अतिरिक्त संबंध, अंतर जाति विवाह, मूत्रमार्ग संक्रमण।",
+          effect: "अतिरिक्त संबंध, अंतर-जातीय विवाह, यूटी संक्रमण।",
           type: 0,
         },
+
         {
           combo: 48,
-          effect: "(बहुत नकारात्मक) रक्त संबंधित बीमारी, अइलाज न किया जा सकने वाली समस्याएँ, सेक्सुअल आनंद में कमी।",
+          effect:
+            "(बहुत नकारात्मक) रक्त सम्बन्धी रोग, असाध्य समस्याएं, यौन सुख में कमी।",
           type: 0,
         },
         {
           combo: 84,
-          effect: "(बहुत नकारात्मक) रक्त संबंधित बीमारी, अइलाज न किया जा सकने वाली समस्याएँ, सेक्सुअल आनंद में कमी।",
+          effect:
+            "(बहुत नकारात्मक) रक्त सम्बन्धी रोग, असाध्य समस्याएं, यौन सुख में कमी।",
           type: 0,
         },
         {
           combo: 67,
-          "effect": "प्रेम विवाह की संभावना, पति के स्वास्थ्य में समस्या, उलझन में विवाहित जीवन की संभावना।",
+          effect:
+            "लव मैरिज की संभावना, जीवनसाथी के स्वास्थ्य में समस्या, अशांत वैवाहिक जीवन की संभावना।",
           type: 0,
         },
         {
           combo: 76,
-          "effect": "प्रेम विवाह की संभावना, पति के स्वास्थ्य में समस्या, उलझन में विवाहित जीवन की संभावना।",
+          effect:
+            "लव मैरिज की संभावना, जीवनसाथी के स्वास्थ्य में समस्या, अशांत वैवाहिक जीवन की संभावना।",
           type: 0,
         },
         {
           combo: 68,
-          "effect": "आंख समस्या, शरीर के किसी एक अंग में समस्या... यदि जन्म तिथि में एक से अधिक 1 हो तो इस कॉम्बो को सिफारिश न करें।",
+          effect:
+            "आँखों की समस्या, शरीर के किसी एक अंग में समस्या, अगर जन्मतिथि में कई 1 हैं तो इस कॉम्बो को लेने की सलाह न दें।",
           type: 0,
         },
         {
           combo: 86,
-          "effect": "आंख समस्या, शरीर के किसी एक अंग में समस्या... यदि जन्म तिथि में एक से अधिक 1 हो तो इस कॉम्बो को सिफारिश न करें।",
+          effect:
+            "आँखों की समस्या, शरीर के किसी एक अंग में समस्या, अगर जन्मतिथि में कई 1 हैं तो इस कॉम्बो को लेने की सलाह न दें।",
           type: 0,
         },
         {
           combo: 89,
-          "effect": "तर्कसंगत, सिद्धांतों के साथ काम, व्यक्ति को बाद में जीवन में पुरानी समस्या हो सकती है।",
+          effect:
+            "बहस करने वाला, सिद्धांतों के साथ काम करने वाला, जातक को जीवन के अंतिम भाग में कोई पुरानी बीमारी हो सकती है।",
           type: 0,
         },
         {
           combo: 98,
-          "effect": "तर्कसंगत, सिद्धांतों के साथ काम, व्यक्ति को बाद में जीवन में पुरानी समस्या हो सकती है।",
+          effect:
+            "बहस करने वाला, सिद्धांतों के साथ काम करने वाला, जातक को जीवन के अंतिम भाग में कोई पुरानी बीमारी हो सकती है।",
           type: 0,
         },
       ];
-      
+
+      // Chat GPT Translated
+      // const masterHinArr = [
+      //   {
+      //     combo: 11,
+      //     effect: "भावनात्मक, अहंकार, रवैया, संचार और तेज़ बोलना",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 22,
+      //     effect: "मूड स्विंग, डिप्रेशन, बहुत ज्यादा भावनात्मक, बीपी समस्या, नाम का आरंभ B, K, या R से हो तो 100% भावनात्मक समस्या",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 33,
+      //     effect: "ज्ञान के लिए भूखा, कम आधारित",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 44,
+      //     effect: "देरी, संघर्ष, सिरदर्द",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 55,
+      //     effect: "सुस्त, आलसी, संचार और पैसे बढ़ सकते हैं",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 66,
+      //     effect: "शोभायात्रा प्रेमी, यात्रा, कभी-कभी जरूरत पर उपयोग करने की अनुमति नहीं",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 77,
+      //     effect: "मूड स्विंग, आंतरिक बाधाएँ, आध्यात्मिकता, अत्यधिक सोच, चिंता",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 88,
+      //     effect: "देरी, व्यवधान, अवरोध",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 99,
+      //     effect: "कर्ज, गुस्सा, रक्त संबंधी समस्याएँ, त्वचा का रंग लाल ध्वनि, बच्चे इस कॉम्बो को प्राप्त कर सकते हैं",
+      //     type: 0,
+      //   },
+
+      // Excel sheet data
+
+      // const masterEngArr = [
+      //   {
+      //     combo: 11,
+      //     effect: "Emotional, Ego, Attitude, communication and speaking fast",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 22,
+      //     effect:
+      //       "Mood swing, Depression, to much Emotional, BP problem, If name starting with B,K, R than 100% Emotional issue",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 33,
+      //     effect: "Hungary for Knowledge, Less Grounded",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 44,
+      //     effect: "Delay, Struggle, Headache",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 55,
+      //     effect: "Lazy, lethargic, communication and money can increase",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 66,
+      //     effect:
+      //       "Luxury lover, Travelling, At time not allowed to use at need",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 77,
+      //     effect:
+      //       "Mood swings, Internal Disturbances, Spirituality, Over Thinking, Anxiety",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 88,
+      //     effect: "Delay, Disturbance, Obstacles",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 99,
+      //     effect:
+      //       "Debt, Anger, Blood related issues, skin colour red tone, children can have this combo",
+      //     type: 0,
+      //   },
+
+      //   // upper to be checked
+
+      //   {
+      //     combo: 12,
+      //     effect: "Attractive face, saving person, Helpful life partner",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: "13",
+      //     effect:
+      //       "Good Advisor, Good Education, Respectful and Popular, Special in his circle, 31 combination makes person Professional",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 31,
+      //     effect:
+      //       "Good Advisor, Good Education, Respectful and Popular, Special in his circle, 31 combination makes person Professional",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 15,
+      //     effect:
+      //       "Father's popularity, Generally these people make their father famous (good cause)",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 51,
+      //     effect:
+      //       "Father's popularity, Generally these people make their father famous (good cause)",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 25,
+      //     effect:
+      //       "Hath me Shaffa, Can work in occult science/Medical line, One who gives Bail to others, Success through Air-Travel, Try to avoid stuff related to Finance.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 52,
+      //     effect:
+      //       "Hath me Shaffa, Can work in occult science/Medical line, One who gives Bail to others, Success through Air-Travel, Try to avoid stuff related to Finance.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 29,
+      //     effect:
+      //       "Person have decent amount of Money, Live happily on the money of Someone else, Native might become egoistic, If DOB 29 Relationship issues, Success through Air-Travel, Try to avoid stuff related to Finance.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 92,
+      //     effect:
+      //       "Person have decent amount of Money, Live happily on the money of Someone else, Native might become egoistic, If DOB 29 Relationship issues, Success through Air-Travel, Try to avoid stuff related to Finance.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 73,
+      //     effect:
+      //       "Complete personality, person would be able to take benefit from knowledge.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 37,
+      //     effect:
+      //       "Complete personality, person would be able to take benefit from knowledge.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 38,
+      //     effect:
+      //       "Real Estate, Counsellor, Peacemaker or mediator between Two parties.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 83,
+      //     effect:
+      //       "Real Estate, Counsellor, Peacemaker or mediator between Two parties.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 47,
+      //     effect:
+      //       "Honest, Brilliant, gives importance of Integrity, Rahu-Ketu Combo.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 74,
+      //     effect:
+      //       "Honest, Brilliant, gives importance of Integrity, Rahu-Ketu Combo.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 57,
+      //     effect:
+      //       "Speaker, writer, Public relation, Good Expressive person, Lot of person comes to them for Advice.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 75,
+      //     effect:
+      //       "Speaker, writer, Public relation, Good Expressive person, Lot of person comes to them for Advice.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 69,
+      //     effect:
+      //       "Good management skill, Good Planner, Opposite Sex involvement.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 96,
+      //     effect:
+      //       "Good management skill, Good Planner, Opposite Sex involvement.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 78,
+      //     effect: "Healer, Idealistic, Solve any problem by own power.",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 87,
+      //     effect: "Healer, Idealistic, Solve any problem by own power.",
+      //     type: 1,
+      //   },
+
+      //   // neutral
+
+      //   {
+      //     combo: 17,
+      //     effect:
+      //       "Money related work is never stopped, There is someone in close circle who is in Govt. job, Person might be working in MNC and getting good facilities ex private- Good facilities/Work from Home, Chances of 2 Marriage , More profit from Lying, If DOB has many 7, than don't chose this combo, If 2,5,6 missing in DOB and Mobile has 17/71 will give majorrelationship issues",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 71,
+      //     effect:
+      //       "Money related work is never stopped, There is someone in close circle who is in Govt. job, Person might be working in MNC and getting good facilities ex private- Good facilities/Work from Home, Chances of 2 Marriage , More profit from Lying, If DOB has many 7, than don't chose this combo, If 2,5,6 missing in DOB and Mobile has 17/71 will give majorrelationship issues",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 19,
+      //     effect:
+      //       "You own what u want, Always on a high place, Professional person, Rasukhdar, dom Lover",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 91,
+      //     effect:
+      //       "You own what u want, Always on a high place, Professional person, Rasukhdar, dom Lover",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 21,
+      //     effect: "Attractive face, waste of Money",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 24,
+      //     effect:
+      //       "Keep patience to achieve something, Makes different plans and brain actively processing those plans, negative/destructive thinking.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 42,
+      //     effect:
+      //       "Keep patience to achieve something, Makes different plans and brain actively processing those plans, negative/destructive thinking.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 35,
+      //     effect:
+      //       "Native gets success away from Home, Fear of Father, Hence Successful, Good Economical Condition, Liquid money problem.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 53,
+      //     effect:
+      //       "Native gets success away from Home, Fear of Father, Hence Successful, Good Economical Condition, Liquid money problem.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 63,
+      //     effect:
+      //       "More of Principal oriented person, Barrier in Studies , Good knowledge but native will struggle in presentation.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 36,
+      //     effect:
+      //       "More of Principal oriented person, Barrier in Studies , Good knowledge but native will struggle in presentation.",
+      //     type: 2,
+      //   },
+
+      //   {
+      //     combo: 93,
+      //     effect:
+      //       "Loves to show-off, Person will have a lots of Duality in nature.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 39,
+      //     effect:
+      //       "Loves to show-off, Person will have a lots of Duality in nature.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 49,
+      //     effect: "Do risky work , Uniform work, Criminal minded.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 94,
+      //     effect: "Do risky work , Uniform work, Criminal minded.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 56,
+      //     effect:
+      //       "Hesitate to ask own money, Apke ghar ke pass koi big landmark he kya Mandir/Superstore, Business minded",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 65,
+      //     effect:
+      //       "Hesitate to ask own money, Apke ghar ke pass koi big landmark he kya Mandir/Superstore, Business minded",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 85,
+      //     effect:
+      //       "Money stuck , Calculated mind, Person doing some work related to Money/Finance, Talks about Lakhs and Crores",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 58,
+      //     effect:
+      //       "Money stuck , Calculated mind, Person doing some work related to Money/Finance, Talks about Lakhs and Crores",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 95,
+      //     effect:
+      //       "Destroy relationship through Bad speech , Person opt for Science or commerce stream",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 59,
+      //     effect:
+      //       "Destroy relationship through Bad speech , Person opt for Science or commerce stream",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 79,
+      //     effect: "Success after separation from Father.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 97,
+      //     effect: "Success after separation from Father.",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 14,
+      //     effect:
+      //       "Person can get attracted to Loan liabilities, Legal Notice, Health issues, Hard work, Toughness Number.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 41,
+      //     effect:
+      //       "Person can get attracted to Loan liabilities, Legal Notice, Health issues, Hard work, Toughness Number.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 16,
+      //     effect:
+      //       "(Most Negative) Spouse health issues, married life issues, income confined (Owners have less income at the time of having this mo. No.).",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 61,
+      //     effect:
+      //       "(Most Negative) Spouse health issues, married life issues, income confined (Owners have less income at the time of having this mo. No.).",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 18,
+      //     effect:
+      //       "(Very Negative) Spouse health issue, understanding issues in father & son, Govt. related issue, change in job frequently.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 81,
+      //     effect:
+      //       "(Very Negative) Spouse health issue, understanding issues in father & son, Govt. related issue, change in job frequently.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 23,
+      //     effect:
+      //       "Generally many enemy but none of them will be able to harm he native.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 32,
+      //     effect:
+      //       "Generally many enemy but none of them will be able to harm he native.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 26,
+      //     effect:
+      //       "Barrier in Studies or Break in education , Girl- Problem with mother in law, Attraction towards money or opposite sex, Chances of less Sperm count or Diabetes.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 62,
+      //     effect:
+      //       "Barrier in Studies or Break in education , Girl- Problem with mother in law, Attraction towards money or opposite sex, Chances of less Sperm count or Diabetes.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 27,
+      //     effect:
+      //       "Good intuition, Joint pain Or Urine related disease, Arthritis (Vaat Issue).",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 72,
+      //     effect:
+      //       "Good intuition, Joint pain Or Urine related disease, Arthritis (Vaat Issue).",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 28,
+      //     effect:
+      //       "Person have decent amount of Money, Excessive Medical/Hospital Expenditure, 2 marriages in the Family, Try to avoid Bad company it can Harm you, Vish yog.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 82,
+      //     effect:
+      //       "Person have decent amount of Money, Excessive Medical/Hospital Expenditure, 2 marriages in the Family, Try to avoid Bad company it can Harm you, Vish yog.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 34,
+      //     effect:
+      //       "Legs shivering, Paralysis to someone in the family, Breathing related issues to person, if DOB has 3 or more times 8 than don't take this combo.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 43,
+      //     effect:
+      //       "Legs shivering, Paralysis to someone in the family, Breathing related issues to person, if DOB has 3 or more times 8 than don't take this combo.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 45,
+      //     effect:
+      //       "Needs to visit Hospital visits for different medical reasons and Court for different issues, Life with Restrictions.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 54,
+      //     effect:
+      //       "Needs to visit Hospital visits for different medical reasons and Court for different issues, Life with Restrictions.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 46,
+      //     effect: "Extra relationship, Inter-cast marriage, UT infection.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 64,
+      //     effect: "Extra relationship, Inter-cast marriage, UT infection.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 48,
+      //     effect:
+      //       "(Very Negative) Blood related disease, Incurable problems, Deficiency in sexual pleasure.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 84,
+      //     effect:
+      //       "(Very Negative) Blood related disease, Incurable problems, Deficiency in sexual pleasure.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 67,
+      //     effect:
+      //       "Chances of Love marriage, Issue in Spouse health, Chances of disturbed married life.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 76,
+      //     effect:
+      //       "Chances of Love marriage, Issue in Spouse health, Chances of disturbed married life.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 68,
+      //     effect:
+      //       "Eye Problem, Issue in any one organ of Body… If multiple 1 in DOB than don’t recommend this combo.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 86,
+      //     effect:
+      //       "Eye Problem, Issue in any one organ of Body… If multiple 1 in DOB than don’t recommend this combo.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 89,
+      //     effect:
+      //       "Argumentative, Works with Principle, Person might get chronic issue in later part of life.",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 98,
+      //     effect:
+      //       "Argumentative, Works with Principle, Person might get chronic issue in later part of life.",
+      //     type: 0,
+      //   },
+      // ];
+      //   // upper to be checked
+      //   {
+      //     combo: 12,
+      //     effect: "आकर्षक चेहरा, बचाव करने वाला व्यक्ति, सहायक जीवन साथी",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: "13",
+      //     effect: "अच्छे सलाहकार, अच्छी शिक्षा, सम्मानीय और लोकप्रिय, अपने चक्कर में विशेष, 31 का संयोजन व्यक्ति को पेशेवर बना देता है",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 31,
+      //     effect: "अच्छे सलाहकार, अच्छी शिक्षा, सम्मानीय और लोकप्रिय, अपने चक्कर में विशेष, 31 का संयोजन व्यक्ति को पेशेवर बना देता है",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 15,
+      //     effect: "पिता की पॉपुलैरिटी, आम तौर पर ये लोग अपने पिता को प्रसिद्ध करते हैं (अच्छे कारण के लिए)",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 51,
+      //     effect: "पिता की पॉपुलैरिटी, आम तौर पर ये लोग अपने पिता को प्रसिद्ध करते हैं (अच्छे कारण के लिए)",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 25,
+      //     effect: "हाथ में शफा, अन्धविश्वास विज्ञान/चिकित्सा लाइन में काम कर सकते हैं, अन्यों को जमाने वाला, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 52,
+      //     effect: "हाथ में शफा, अन्धविश्वास विज्ञान/चिकित्सा लाइन में काम कर सकते हैं, अन्यों को जमाने वाला, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 29,
+      //     effect: "व्यक्ति के पास समय की अच्छी मात्रा है, किसी अन्य के पैसे पर खुशहाल जीवन जीना, नेटिव अहंकारी हो सकता है, यदि जन्मतिथि 29 है तो संबंध संबंधी मुद्दे, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 92,
+      //     effect: "व्यक्ति के पास समय की अच्छी मात्रा है, किसी अन्य के पैसे पर खुशहाल जीवन जीना, नेटिव अहंकारी हो सकता है, यदि जन्मतिथि 29 है तो संबंध संबंधी मुद्दे, हवाई यात्रा के माध्यम से सफलता, वित्त से संबंधित वस्तुओं से बचने का प्रयास करें।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 73,
+      //     effect:
+      //     "पूर्ण व्यक्तित्व, व्यक्ति ज्ञान से लाभ उठा सकेगा।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 37,
+      //     effect:
+      //     "पूर्ण व्यक्तित्व, व्यक्ति ज्ञान से लाभ उठा सकेगा।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 38,
+      //     effect: "रियल एस्टेट, सलाहकार, दो पक्षों के बीच शांति स्थापित करने वाला या मध्यस्थता करने वाला।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 83,
+      //     effect: "रियल एस्टेट, सलाहकार, दो पक्षों के बीच शांति स्थापित करने वाला या मध्यस्थता करने वाला।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 47,
+      //     effect: "ईमानदार, प्रतिभाशाली, अखंडता का महत्व देता है, राहु-केतु संयोजन।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 74,
+      //     effect: "ईमानदार, प्रतिभाशाली, अखंडता का महत्व देता है, राहु-केतु संयोजन।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 57,
+      //     effect: "वक्ता, लेखक, सार्वजनिक संबंध, अच्छे अभिव्यक्ति वाला व्यक्ति, बहुत सारे लोग उनसे सलाह के लिए आते हैं।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 75,
+      //     effect: "वक्ता, लेखक, सार्वजनिक संबंध, अच्छे अभिव्यक्ति वाला व्यक्ति, बहुत सारे लोग उनसे सलाह के लिए आते हैं।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 69,
+      //     effect: "अच्छा प्रबंधन कौशल, अच्छा योजनाकार, विपरीत लिंग का संलग्नता।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 96,
+      //     effect: "अच्छा प्रबंधन कौशल, अच्छा योजनाकार, विपरीत लिंग का संलग्नता।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 78,
+      //     effect: "चिकित्सक, आदर्शवादी, अपनी शक्ति से किसी भी समस्या का समाधान।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 87,
+      //     effect: "चिकित्सक, आदर्शवादी, अपनी शक्ति से किसी भी समस्या का समाधान।",
+      //     type: 1,
+      //   },
+
+      //   // neutral
+
+      //   {
+      //     combo: 17,
+      //     effect: "पैसे से संबंधित काम कभी भी बंद नहीं होता, किसी को सर्किल में सरकारी नौकरी में होने वाला होता है, व्यक्ति MNC में काम कर रहा हो सकता है और अच्छी सुविधाएं प्राप्त कर रहा है जैसे कि निजी - अच्छी सुविधाएँ/गृह से काम, 2 विवाह के अवसर, झूठ बोलने से अधिक लाभ, जन्मतिथि में कई 7 हैं तो इस कॉम्बो को न चुनें, अगर जन्मतिथि में 2, 5, 6 गायब हैं और मोबाइल में 17/71 है तो प्रमुख संबंध समस्याएं होंगी।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 71,
+      //     effect: "पैसे से संबंधित काम कभी भी बंद नहीं होता, किसी को सर्किल में सरकारी नौकरी में होने वाला होता है, व्यक्ति MNC में काम कर रहा हो सकता है और अच्छी सुविधाएं प्राप्त कर रहा है जैसे कि निजी - अच्छी सुविधाएँ/गृह से काम, 2 विवाह के अवसर, झूठ बोलने से अधिक लाभ, जन्मतिथि में कई 7 हैं तो इस कॉम्बो को न चुनें, अगर जन्मतिथि में 2, 5, 6 गायब हैं और मोबाइल में 17/71 है तो प्रमुख संबंध समस्याएं होंगी।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 19,
+      //     effect: "आप जो भी चाहते हैं, उसका मालिक होते हैं, हमेशा ऊंची जगह पर होते हैं, पेशेवर व्यक्ति, रसुखदार, डॉम लवर।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 91,
+      //     effect: "आप जो भी चाहते हैं, उसका मालिक होते हैं, हमेशा ऊंची जगह पर होते हैं, पेशेवर व्यक्ति, रसुखदार, डॉम लवर।",
+      //     type: 1,
+      //   },
+      //   {
+      //     combo: 21,
+      //     effect: "आकर्षक चेहरा, पैसे का अपव्यय।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 24,
+      //     effect: "कुछ प्राप्त करने के लिए धैर्य बनाए रखें, विभिन्न योजनाएं बनाते हैं और दिमाग उन योजनाओं को सक्रिय रूप से प्रसंस्करण करता है, नकारात्मक/विनाशकारी सोच।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 42,
+      //     effect: "कुछ प्राप्त करने के लिए धैर्य बनाए रखें, विभिन्न योजनाएं बनाते हैं और दिमाग उन योजनाओं को सक्रिय रूप से प्रसंस्करण करता है, नकारात्मक/विनाशकारी सोच।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 35,
+      //     effect: "नेटिव को घर से दूर सफलता मिलती है, पिता का डर, इसलिए सफल, अच्छी आर्थिक स्थिति, तरल धन की समस्या।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 53,
+      //     effect: "नेटिव को घर से दूर सफलता मिलती है, पिता का डर, इसलिए सफल, अच्छी आर्थिक स्थिति, तरल धन की समस्या।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 63,
+      //     effect: "अधिकांश सिद्धांत उत्साहित व्यक्ति, अध्ययन में बाधा, अच्छा ज्ञान लेकिन नेटिव प्रस्तुति में संघर्ष करेगा।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 36,
+      //     effect: "अधिकांश सिद्धांत उत्साहित व्यक्ति, अध्ययन में बाधा, अच्छा ज्ञान लेकिन नेटिव प्रस्तुति में संघर्ष करेगा।",
+      //     type: 2,
+      //   },
+
+      //   {
+      //     combo: 93,
+      //     effect: "दिखावा करने का शौक, व्यक्ति की प्रकृति में बहुत सारी द्वैतता होगी।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 39,
+      //     effect: "दिखावा करने का शौक, व्यक्ति की प्रकृति में बहुत सारी द्वैतता होगी।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 49,
+      //     effect: "जोखिमपूर्ण काम करें, वर्दी का काम, अपराधी मनोवृत्ति।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 94,
+      //     effect: "जोखिमपूर्ण काम करें, वर्दी का काम, अपराधी मनोवृत्ति।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 56,
+      //     effect: "अपने पैसे के लिए हक मांगने में हिचकिचाहट, आपके घर के पास कोई बड़ा संकेत है क्या मंदिर/सुपरस्टोर, व्यवसाय मंदिर।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 65,
+      //     effect: "अपने पैसे के लिए हक मांगने में हिचकिचाहट, आपके घर के पास कोई बड़ा संकेत है क्या मंदिर/सुपरस्टोर, व्यवसाय मंदिर।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 85,
+      //     effect: "पैसे अटके, गणनात्मक मन, व्यक्ति कुछ ऐसा काम कर रहा है जो पैसे/वित्त से संबंधित है, लाखों और करोड़ों की बातें करता है।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 58,
+      //     effect: "पैसे अटके, गणनात्मक मन, व्यक्ति कुछ ऐसा काम कर रहा है जो पैसे/वित्त से संबंधित है, लाखों और करोड़ों की बातें करता है।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 95,
+      //     effect: "खराब भाषा के माध्यम से संबंध नष्ट करें, व्यक्ति विज्ञान या वाणिज्य धारा का चयन करता है।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 59,
+      //     effect: "खराब भाषा के माध्यम से संबंध नष्ट करें, व्यक्ति विज्ञान या वाणिज्य धारा का चयन करता है।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 79,
+      //     effect: "पिता से अलग होने के बाद सफलता।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 97,
+      //     effect: "पिता से अलग होने के बाद सफलता।",
+      //     type: 2,
+      //   },
+      //   {
+      //     combo: 14,
+      //     effect: "व्यक्ति ऋण दायित्व, कानूनी नोटिस, स्वास्थ्य समस्याएँ, कठिन काम, कठिनता नंबर को आकर्षित हो सकता है।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 41,
+      //     effect: "व्यक्ति ऋण दायित्व, कानूनी नोटिस, स्वास्थ्य समस्याएँ, कठिन काम, कठिनता नंबर को आकर्षित हो सकता है।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 16,
+      //     effect: "(सबसे नकारात्मक) पति के स्वास्थ्य समस्याएँ, विवाहित जीवन समस्याएँ, आय सीमित (मालिकों को इस महीने की संख्या के समय कम आय होती है)।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 61,
+      //     effect: "(सबसे नकारात्मक) पति के स्वास्थ्य समस्याएँ, विवाहित जीवन समस्याएँ, आय सीमित (मालिकों को इस महीने की संख्या के समय कम आय होती है)।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 18,
+      //     effect: "(बहुत नकारात्मक) पति के स्वास्थ्य समस्या, पिता और पुत्र में समझौता, सरकार संबंधित समस्या, नौकरी को बदलना बार-बार।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 81,
+      //     effect: "(बहुत नकारात्मक) पति के स्वास्थ्य समस्या, पिता और पुत्र में समझौता, सरकार संबंधित समस्या, नौकरी को बदलना बार-बार।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 23,
+      //     effect: "आमतौर पर कई दुश्मन होते हैं, लेकिन उनमें से कोई भी नेटिव को हानि नहीं पहुंचा सकता।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 32,
+      //     effect: "आमतौर पर कई दुश्मन होते हैं, लेकिन उनमें से कोई भी नेटिव को हानि नहीं पहुंचा सकता।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 26,
+      //     effect: "अध्ययन में बाधा या शिक्षा में विराम, लड़की- सास समस्या, पैसे या विपरीत लिंग की ओर आकर्षण, कम स्पर्म गिनती या मधुमेह के अवसर।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 62,
+      //     effect: "अध्ययन में बाधा या शिक्षा में विराम, लड़की- सास समस्या, पैसे या विपरीत लिंग की ओर आकर्षण, कम स्पर्म गिनती या मधुमेह के अवसर।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 27,
+      //     effect: "अच्छा अनुभव, जोड़ों में दर्द या मूत्र संबंधित बीमारी, गठिया (वात इस्यू)।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 72,
+      //     effect: "अच्छा अनुभव, जोड़ों में दर्द या मूत्र संबंधित बीमारी, गठिया (वात इस्यू)।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 28,
+      //     effect: "व्यक्ति के पास मामूली धन है, अत्यधिक चिकित्सा / अस्पताल व्यय, परिवार में 2 शादियाँ, बुरी कंपनी से बचें यह आपको नुकसान पहुंचा सकती है, विष योग।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 82,
+      //     effect: "व्यक्ति के पास मामूली धन है, अत्यधिक चिकित्सा / अस्पताल व्यय, परिवार में 2 शादियाँ, बुरी कंपनी से बचें यह आपको नुकसान पहुंचा सकती है, विष योग।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 34,
+      //     effect: "पैर कांपना, परिवार में किसी को लकवा, व्यक्ति को श्वसन संबंधित समस्याएँ, अगर जन्म तिथि में 3 या अधिक बार 8 होता है तो इस कॉम्बो को न लें।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 43,
+      //     effect: "पैर कांपना, परिवार में किसी को लकवा, व्यक्ति को श्वसन संबंधित समस्याएँ, अगर जन्म तिथि में 3 या अधिक बार 8 होता है तो इस कॉम्बो को न लें।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 45,
+      //     effect: "अलग-अलग चिकित्सा कारणों के लिए अस्पताल जाने की जरूरत है और न्यायालय में विभिन्न मुद्दों के लिए, प्रतिबंधित जीवन।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 54,
+      //     effect: "अलग-अलग चिकित्सा कारणों के लिए अस्पताल जाने की जरूरत है और न्यायालय में विभिन्न मुद्दों के लिए, प्रतिबंधित जीवन।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 46,
+      //     effect: "अतिरिक्त संबंध, अंतर जाति विवाह, मूत्रमार्ग संक्रमण।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 64,
+      //     effect: "अतिरिक्त संबंध, अंतर जाति विवाह, मूत्रमार्ग संक्रमण।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 48,
+      //     effect: "(बहुत नकारात्मक) रक्त संबंधित बीमारी, अइलाज न किया जा सकने वाली समस्याएँ, सेक्सुअल आनंद में कमी।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 84,
+      //     effect: "(बहुत नकारात्मक) रक्त संबंधित बीमारी, अइलाज न किया जा सकने वाली समस्याएँ, सेक्सुअल आनंद में कमी।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 67,
+      //     "effect": "प्रेम विवाह की संभावना, पति के स्वास्थ्य में समस्या, उलझन में विवाहित जीवन की संभावना।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 76,
+      //     "effect": "प्रेम विवाह की संभावना, पति के स्वास्थ्य में समस्या, उलझन में विवाहित जीवन की संभावना।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 68,
+      //     "effect": "आंख समस्या, शरीर के किसी एक अंग में समस्या... यदि जन्म तिथि में एक से अधिक 1 हो तो इस कॉम्बो को सिफारिश न करें।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 86,
+      //     "effect": "आंख समस्या, शरीर के किसी एक अंग में समस्या... यदि जन्म तिथि में एक से अधिक 1 हो तो इस कॉम्बो को सिफारिश न करें।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 89,
+      //     "effect": "तर्कसंगत, सिद्धांतों के साथ काम, व्यक्ति को बाद में जीवन में पुरानी समस्या हो सकती है।",
+      //     type: 0,
+      //   },
+      //   {
+      //     combo: 98,
+      //     "effect": "तर्कसंगत, सिद्धांतों के साथ काम, व्यक्ति को बाद में जीवन में पुरानी समस्या हो सकती है।",
+      //     type: 0,
+      //   },
+      // ];
+
       let dataArr = masterEngArr;
 
-      function changeLang(){
+      function changeLang() {
         let lan = $(".engLan").val();
-        lan = lan=="true" ? true : false;
+        lan = lan == "true" ? true : false;
         console.log(typeof lan);
         $(".engLan").val(!lan);
-        dataArr = lan== true ? masterEngArr : masterHinArr;
+        dataArr = lan == true ? masterEngArr : masterHinArr;
         compute();
       }
 
@@ -1248,16 +2219,18 @@
         compute();
       }
 
-
-      function compute(){
+      function compute() {
         $(".wrapperDiv").html("");
         numberArr.forEach((element) => {
           pairs = convertToPairs(element);
           const validNum = mustExclude.every((item) => !pairs.includes(item));
-          let compound = element.split("").reduce((a, b) => Number(a) + Number(b));
+          let compound = element
+            .split("")
+            .reduce((a, b) => Number(a) + Number(b));
           let sum = sumToOneDigit(element);
           let goodCompound = !mustExclude.includes(compound);
-          let goodSum = sum == 1 || sum == 3 || sum == 5 || sum == 6 ? true : false;
+          let goodSum =
+            sum == 1 || sum == 3 || sum == 5 || sum == 6 ? true : false;
           allGood = validNum && goodCompound && goodSum ? true : false;
           console.group(allGood, validNum, goodCompound, goodSum);
           let allGoodClass =
@@ -1285,13 +2258,18 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="row mx-0 shadow p-2">`;
           pairs.forEach((pair) => {
             for (let index = 0; index < dataArr.length; index++) {
               const elem = dataArr[index];
               if (pair == elem.combo) {
-                bgClass = elem.type == 0 ? "bg-danger" : elem.type == 1 ? "bg-success" : "bg-warning";
+                bgClass =
+                  elem.type == 0
+                    ? "bg-danger"
+                    : elem.type == 1
+                    ? "bg-success"
+                    : "bg-warning";
                 html += `<div class="col-2 col-md-1 text-center px-1 my-auto">
                                   <div class="shadow p-2 ${bgClass}">${pair}</div>
                                 </div>
@@ -1342,6 +2320,10 @@
         showHideDiv("inputDiv", "resultDiv");
       });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
