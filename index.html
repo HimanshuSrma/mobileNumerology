@@ -115,58 +115,14 @@
       crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script> -->
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
     <script src="data.js"></script>
     <script src="script.js"></script>
   </head>
 
   <body>
-    <input type="hidden" id="engLan" class="engLan" value="1" />
-    <div id="inputDiv">
-      <div class="text-center mt-3">
-        <h1>Mobile No Numerology</h1>
-        <p>By</p>
-        <h5><em>Himanshu Sharma</em></h5>
-      </div>
-      <div class="centerdDiv">
-        <div class="row mx-0 justify-content-center">
-          <div class="col-8 col-md-7">
-            <input
-              class="form-control"
-              row="1"
-              id="numberInput"
-              placeholder="9876543210  ,  9876543210"
-              oninput="this.value = this.value.replace(/[^0-9,.]/g,'')"
-            />
-          </div>
-          <div class="col-3 col-md-2 my-auto">
-            <button class="btn btn-outline-primary" onclick="find()">
-              Analyse
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="resultDiv" class="" style="display: none">
-      <div class="text-end bg-light py-3 position-sticky top-0">
-        <button
-          type="button"
-          onclick="changeLang()"
-          class="btn btn-outline-info me-3"
-        >
-          <i class="fa fa-switch"></i>&nbsp;Change language
-        </button>
-        <button
-          type="button"
-          onclick="reset()"
-          class="btn btn-outline-info me-3"
-        >
-          <i class="fa fa-times"></i>&nbsp;Change Number
-        </button>
-      </div>
-      <div class="wrapperDiv row mx-0 p-3"></div>
-    </div>
-
+  <app-data id="bodyContent"></app-data>
+  </body>
     <script>
       function convertToPairs(number) {
         let numberString = number.toString();
@@ -184,5 +140,4 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-  </body>
 </html>

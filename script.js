@@ -2,8 +2,10 @@ let numberArr = [];
 let effectDataArr = englishArr;
 
 $(document).ready(() => {
+    $("#bodyContent").load("bodyContent.html");
     showHideDiv("inputDiv", "resultDiv");
 });
+
 function reset() {
     $("#numberInput").val("");
     $(".wrapperDiv").html("");
