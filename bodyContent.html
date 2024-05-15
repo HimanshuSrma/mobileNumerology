@@ -8,13 +8,7 @@
   <div class="centerdDiv">
     <div class="row mx-0 justify-content-center">
       <div class="col-8 col-md-7">
-        <input
-          class="form-control"
-          row="1"
-          id="numberInput"
-          placeholder="9876543210  ,  9876543210"
-          oninput="this.value = this.value.replace(/[^0-9,.]/g,'')" onkeypress="event.keyCode === 13?find(1):null"
-        />
+        <input class="form-control" id="numberInput" oninput="this.value = this.value.replace(/[^0-9,.]/g,'')" onkeypress="event.keyCode === 13?find(1):null" placeholder="9876543210  ,  9876543210"/>
       </div>
       <div class="col-3 col-md-2 my-auto">
         <button class="btn btn-primary rounded-pill" onclick="find()">
