@@ -1,0 +1,25 @@
+<script>
+$(document).ready(function(){
+    $("#countBtn").click(function(){
+        var inputNumber = $("#inputNumber").val();
+        var digitCount = {};
+        for (var i = 0; i < inputNumber.length; i++) {
+            var digit = inputNumber[i];
+            if (!digitCount[digit]) {
+                digitCount[digit] = 1;
+            } else {
+                digitCount[digit]++;
+            }
+        }
+        var output = "";
+        for (var digit in digitCount) {
+            output += digit.repeat(digitCount[digit]) + ",";
+        }
+        output = output.slice(0, -1);
+        $("#output").text(output);
+    });
+});
+</script>
+<script>
+        
+</script>
