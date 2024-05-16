@@ -1,61 +1,207 @@
 let mustExclude = [
     14, 41, 16, 61, 18, 81, 23, 32, 26, 62, 27, 72, 28, 82, 34, 43, 45, 54,
     46, 64, 48, 84, 67, 76, 68, 86, 89, 98, 36, 63, 49, 94, 58, 85, 99, 999,
-    88, 888, 77, 777, 666, 555, 444, 44, 333, 22, 222, 111,
+    88, 888, 77, 777, 444, 44, 22, 222,
 ];
 
 // Google Bard rephrased english
 
 const englishArr = [
+    // 1
     {
         combo: 11,
-        effect:
-            "Emotional, prideful, with a strong attitude. Talks quickly and communicates well.",
+        effect: "Achieves name, fame, success and excellent communication skills. However, this combination can also lead to ego inflation and high stress levels.",
         type: 1,
     },
     {
-        combo: 22,
-        effect:
-            "Experiences mood swings, depression, and strong emotions. May have blood pressure problems. If your name starts with B, K, or R, emotional issues are even more likely.",
-        type: 0,
-    },
-    {
-        combo: 33,
-        effect: "Curious and eager to learn, but can be impractical.",
+        combo: 111,
+        effect: "Achieves name, fame, success and excellent communication skills. However, this combination can also lead to ego inflation and high stress levels.",
         type: 2,
     },
     {
-        combo: 44,
-        effect: "May experience delays, struggles, and headaches.",
+        combo: 1111,
+        effect: "Achieves name, fame, success and excellent communication skills. However, this combination can also lead to ego inflation and high stress levels.",
         type: 0,
     },
+    {
+        combo: 11111,
+        effect: "Achieves name, fame, success and excellent communication skills. However, this combination can also lead to ego inflation and high stress levels.",
+        type: 0,
+    },
+
+    // 2
+    {
+        combo: 22,
+        effect: "Experiences mood swings, depression, and strong emotions. May have blood pressure problems. Additionally, if your name starts with B, K, or R, emotional issues may be even more likely.",
+        type: 0,
+    },
+    {
+        combo: 222,
+        effect: "Experiences mood swings, depression, and strong emotions. May have blood pressure problems. Additionally, if your name starts with B, K, or R, emotional issues may be even more likely.",
+        type: 0,
+    },
+    {
+        combo: 2222,
+        effect: "Experiences mood swings, depression, and strong emotions. May have blood pressure problems. Additionally, if your name starts with B, K, or R, emotional issues may be even more likely.",
+        type: 0,
+    },
+    {
+        combo: 22222,
+        effect: "Experiences mood swings, depression, and strong emotions. May have blood pressure problems. Additionally, if your name starts with B, K, or R, emotional issues may be even more likely.",
+        type: 0,
+    },
+
+    // 3
+    {
+        combo: 33,
+        effect: "Curious and eager to learn, but can be impractical.",
+        type: 1,
+    },
+    {
+        combo: 333,
+        effect: "Curious and eager to learn, with a wealth of knowledge. However, a trusting nature can sometimes lead to being taken advantage of. Difficulty completing tasks may arise due to struggles with applying knowledge effectively.",
+        type: 2,
+    },
+    {
+        combo: 3333,
+        effect: "Curious and eager to learn, with a wealth of knowledge. However, a trusting nature can sometimes lead to being taken advantage of. Difficulty completing tasks may arise due to struggles with applying knowledge effectively.",
+        type: 0,
+    },
+    {
+        combo: 33333,
+        effect: "Curious and eager to learn, with a wealth of knowledge. However, a trusting nature can sometimes lead to being taken advantage of. Difficulty completing tasks may arise due to struggles with applying knowledge effectively.",
+        type: 0,
+    },
+
+    // 4
+    {
+        combo: 44,
+        effect: "Hard work and struggle increase This combination may lead to delays, struggles, headaches and uspicious nature.",
+        type: 0,
+    },
+    {
+        combo: 444,
+        effect: "Hard work and struggle increase This combination may lead to delays, struggles, headaches and uspicious nature.",
+        type: 0,
+    },
+    {
+        combo: 4444,
+        effect: "Hard work and struggle increase This combination may lead to delays, struggles, headaches and uspicious nature.",
+        type: 0,
+    },
+    {
+        combo: 44444,
+        effect: "Hard work and struggle increase This combination may lead to delays, struggles, headaches and uspicious nature.",
+        type: 0,
+    },
+
+    // 5
     {
         combo: 55,
-        effect:
-            "May be lazy or sluggish, but communication and money flow can improve.",
+        effect: "Confident and communicative, which can improve money flow. However, it may also lead to laziness or sluggishness.",
         type: 1,
     },
+    {
+        combo: 555,
+        effect: "Confident and communicative, which can improve money flow. However, it may also lead to laziness or sluggishness.",
+        type: 2,
+    },
+    {
+        combo: 5555,
+        effect: "Confident and communicative, which can improve money flow. However, it may also lead to laziness or sluggishness.",
+        type: 0,
+    },
+    {
+        combo: 55555,
+        effect: "Confident and communicative, which can improve money flow. However, it may also lead to laziness or sluggishness.",
+        type: 0,
+    },
+
+    // 6
     {
         combo: 66,
-        effect:
-            "Enjoys luxury and travel, but may not always have what they need on hand.",
+        effect: "Relationship-focused, enjoys luxury and travel. However, this love for finer things can lead to overspending and potentially not having what they need on hand.",
         type: 1,
     },
     {
-        combo: 77,
-        effect:
-            "Experiences mood swings, inner turmoil, and may be drawn to spirituality. May overthink and feel anxious.",
+        combo: 666,
+        effect: "Relationship-focused, enjoys luxury and travel. However, this love for finer things can lead to overspending and potentially not having what they need on hand.",
+        type: 2,
+    },
+    {
+        combo: 6666,
+        effect: "Relationship-focused, enjoys luxury and travel. However, this love for finer things can lead to overspending and potentially not having what they need on hand.",
         type: 0,
     },
+    {
+        combo: 66666,
+        effect: "Relationship-focused, enjoys luxury and travel. However, this love for finer things can lead to overspending and potentially not having what they need on hand.",
+        type: 0,
+    },
+
+    // 7
+    {
+        combo: 77,
+        effect: "Experiences relationship issues, mood swings, and inner turmoil. This may lead to a draw towards spirituality or seeking solace in something greater. Prone to overthinking and anxiety.",
+        type: 0,
+    },
+    {
+        combo: 777,
+        effect: "Experiences relationship issues, mood swings, and inner turmoil. This may lead to a draw towards spirituality or seeking solace in something greater. Prone to overthinking and anxiety.",
+        type: 0,
+    },
+    {
+        combo: 7777,
+        effect: "Experiences relationship issues, mood swings, and inner turmoil. This may lead to a draw towards spirituality or seeking solace in something greater. Prone to overthinking and anxiety.",
+        type: 0,
+    },
+    {
+        combo: 77777,
+        effect: "Experiences relationship issues, mood swings, and inner turmoil. This may lead to a draw towards spirituality or seeking solace in something greater. Prone to overthinking and anxiety.",
+        type: 0,
+    },
+
+    // 8
     {
         combo: 88,
-        effect: "May face delays, disruptions, and obstacles.",
+        effect: "May face delays, disturbances, and obstacles. However, this combination also rewards hard work with abundance. Persistence and resilience are key to unlocking the potential of this path.",
         type: 0,
     },
     {
+        combo: 888,
+        effect: "May face delays, disturbances, and obstacles. However, this combination also rewards hard work with abundance. Persistence and resilience are key to unlocking the potential of this path.",
+        type: 0,
+    },
+    {
+        combo: 8888,
+        effect: "May face delays, disturbances, and obstacles. However, this combination also rewards hard work with abundance. Persistence and resilience are key to unlocking the potential of this path.",
+        type: 0,
+    },
+    {
+        combo: 88888,
+        effect: "May face delays, disturbances, and obstacles. However, this combination also rewards hard work with abundance. Persistence and resilience are key to unlocking the potential of this path.",
+        type: 0,
+    },
+
+    // 9
+    {
         combo: 99,
-        effect:
-            "May struggle with debt, anger, and blood-related issues. May have a reddish skin tone. Children can also have this combination.",
+        effect: "Prone to debt, anger, and blood-related issues. May have a reddish skin tone. However, this combination can also indicate strength and resilience, making them well-suited for rough and tough work like astrology vastu etc.",
+        type: 0,
+    },
+    {
+        combo: 999,
+        effect: "Prone to debt, anger, and blood-related issues. May have a reddish skin tone. However, this combination can also indicate strength and resilience, making them well-suited for rough and tough work like astrology vastu etc.",
+        type: 0,
+    },
+    {
+        combo: 9999,
+        effect: "Prone to debt, anger, and blood-related issues. May have a reddish skin tone. However, this combination can also indicate strength and resilience, making them well-suited for rough and tough work like astrology vastu etc.",
+        type: 0,
+    },
+    {
+        combo: 99999,
+        effect: "Prone to debt, anger, and blood-related issues. May have a reddish skin tone. However, this combination can also indicate strength and resilience, making them well-suited for rough and tough work like astrology vastu etc.",
         type: 0,
     },
 
@@ -488,35 +634,134 @@ const englishArr = [
 // Google Bard Translated Hindi
 
 const hindiArr = [
+
+    // 1
     {
         combo: 11,
         effect:
-            "भावुक, अभिमानी, दृढ़ रवैये वाला। जल्दी बात करता है और अच्छा संवाद करता है।",
+            "भावुक, अभिमानी, दृढ़ रवैये वाला। सफलता, नाम और ख्याति मिलती है, लेकिन अहंकार की समस्या और तनाव का स्तर ऊंचा हो सकता है",
         type: 1,
     },
     {
-        combo: 22,
+        combo: 111,
         effect:
-            "मनोदशा में उतार-चढ़ाव, अवसाद और मजबूत भावनाओं का अनुभव करता है। रक्तचाप की समस्या हो सकती है। यदि आपका नाम B, K या R से शुरू होता है, तो भावनात्मक समस्याएं और भी होने की संभावना है।",
+            "भावुक, अभिमानी, दृढ़ रवैये वाला। सफलता, नाम और ख्याति मिलती है, लेकिन अहंकार की समस्या और तनाव का स्तर ऊंचा हो सकता है",
+        type: 2,
+    },
+    {
+        combo: 1111,
+        effect:
+            "भावुक, अभिमानी, दृढ़ रवैये वाला। सफलता, नाम और ख्याति मिलती है, लेकिन अहंकार की समस्या और तनाव का स्तर ऊंचा हो सकता है",
         type: 0,
     },
+    {
+        combo: 11111,
+        effect:
+            "भावुक, अभिमानी, दृढ़ रवैये वाला। सफलता, नाम और ख्याति मिलती है, लेकिन अहंकार की समस्या और तनाव का स्तर ऊंचा हो सकता है",
+        type: 0,
+    },
+
+    // 2
+    {
+        combo: 22,
+        effect:
+            "ममनोदशा में उतार-चढ़ाव, अवसाद और प्रबल भावनाओं का अनुभव होता है। रक्तचाप की समस्या हो सकती है। यदि आपका नाम B, K या R से शुरू होता है, तो भावनात्मक समस्याएं और भी होने की संभावना है।",
+        type: 0,
+    },
+    {
+        combo: 222,
+        effect:
+            "ममनोदशा में उतार-चढ़ाव, अवसाद और प्रबल भावनाओं का अनुभव होता है। रक्तचाप की समस्या हो सकती है। यदि आपका नाम B, K या R से शुरू होता है, तो भावनात्मक समस्याएं और भी होने की संभावना है।",
+        type: 0,
+    },
+    {
+        combo: 2222,
+        effect:
+            "ममनोदशा में उतार-चढ़ाव, अवसाद और प्रबल भावनाओं का अनुभव होता है। रक्तचाप की समस्या हो सकती है। यदि आपका नाम B, K या R से शुरू होता है, तो भावनात्मक समस्याएं और भी होने की संभावना है।",
+        type: 0,
+    },
+    {
+        combo: 22222,
+        effect:
+            "ममनोदशा में उतार-चढ़ाव, अवसाद और प्रबल भावनाओं का अनुभव होता है। रक्तचाप की समस्या हो सकती है। यदि आपका नाम B, K या R से शुरू होता है, तो भावनात्मक समस्याएं और भी होने की संभावना है।",
+        type: 0,
+    },
+
+    // 3
     {
         combo: 33,
         effect:
             "जिज्ञासु और सीखने के लिए उत्सुक, लेकिन अव्यावहारिक हो सकता है।",
+        type: 1,
+    },
+    {
+        combo: 333,
+        effect:
+            "जिज्ञासु और सीखने के लिए उत्सुक, भरोसेमंद स्वभाव का होता है। कभी-कभी ज्ञान को प्रभावी ढंग से लागू नहीं कर पाता है और शुरू किए गए कार्यों को पूरा करने में सक्षम नहीं होता है।",
         type: 2,
     },
     {
-        combo: 44,
-        effect: "देरी, संघर्ष और सिरदर्द का अनुभव हो सकता है।",
+        combo: 3333,
+        effect:
+            "जिज्ञासु और सीखने के लिए उत्सुक, भरोसेमंद स्वभाव का होता है। कभी-कभी ज्ञान को प्रभावी ढंग से लागू नहीं कर पाता है और शुरू किए गए कार्यों को पूरा करने में सक्षम नहीं होता है।",
         type: 0,
     },
     {
+        combo: 33333,
+        effect:
+            "जिज्ञासु और सीखने के लिए उत्सुक, भरोसेमंद स्वभाव का होता है। कभी-कभी ज्ञान को प्रभावी ढंग से लागू नहीं कर पाता है और शुरू किए गए कार्यों को पूरा करने में सक्षम नहीं होता है।",
+        type: 0,
+    },
+
+    // 4
+    {
+        combo: 44,
+        effect: "कड़ी मेहनत और संघर्ष बढ़ते हैं। देरी, परेशानी और सिरदर्द का अनुभव हो सकता है। स्वभाव से शंका करने वाला।",
+        type: 0,
+    },
+    {
+        combo: 444,
+        effect: "कड़ी मेहनत और संघर्ष बढ़ते हैं। देरी, परेशानी और सिरदर्द का अनुभव हो सकता है। स्वभाव से शंका करने वाला।",
+        type: 0,
+    },
+    {
+        combo: 4444,
+        effect: "कड़ी मेहनत और संघर्ष बढ़ते हैं। देरी, परेशानी और सिरदर्द का अनुभव हो सकता है। स्वभाव से शंका करने वाला।",
+        type: 0,
+    },
+    {
+        combo: 44444,
+        effect: "कड़ी मेहनत और संघर्ष बढ़ते हैं। देरी, परेशानी और सिरदर्द का अनुभव हो सकता है। स्वभाव से शंका करने वाला।",
+        type: 0,
+    },
+
+    // 5
+    {
         combo: 55,
         effect:
-            "आलसी या सुस्त हो सकता है, लेकिन संचार और धन का प्रवाह बेहतर हो सकता है।",
+            "आत्मविश्वास से भरपूर और वाक्पटु होने से धन का प्रवाह बढ़ सकता है। लेकिन, इससे आलस्य या सुस्ती भी आ सकती है।",
         type: 1,
     },
+    {
+        combo: 555,
+        effect:
+            "आत्मविश्वास से भरपूर और वाक्पटु होने से धन का प्रवाह बढ़ सकता है। लेकिन, इससे आलस्य या सुस्ती भी आ सकती है।",
+        type: 2,
+    },
+    {
+        combo: 5555,
+        effect:
+            "आत्मविश्वास से भरपूर और वाक्पटु होने से धन का प्रवाह बढ़ सकता है। लेकिन, इससे आलस्य या सुस्ती भी आ सकती है।",
+        type: 0,
+    },
+    {
+        combo: 55555,
+        effect:
+            "आत्मविश्वास से भरपूर और वाक्पटु होने से धन का प्रवाह बढ़ सकता है। लेकिन, इससे आलस्य या सुस्ती भी आ सकती है।",
+        type: 0,
+    },
+
+    // 6
     {
         combo: 66,
         effect:
@@ -524,22 +769,95 @@ const hindiArr = [
         type: 1,
     },
     {
+        combo: 666,
+        effect:
+            "विलासिता और यात्रा का आनंद लेता है, लेकिन हो सकता है कि हमेशा उसकी जरूरत की चीजें न हों।",
+        type: 2,
+    },
+    {
+        combo: 6666,
+        effect:
+            "विलासिता और यात्रा का आनंद लेता है, लेकिन हो सकता है कि हमेशा उसकी जरूरत की चीजें न हों।",
+        type: 0,
+    },
+    {
+        combo: 66666,
+        effect:
+            "विलासिता और यात्रा का आनंद लेता है, लेकिन हो सकता है कि हमेशा उसकी जरूरत की चीजें न हों।",
+        type: 0,
+    },
+
+    // 7
+    {
         combo: 77,
+        effect: "मनोदशा में उतार-चढ़ाव, आंतरिक उथलपुथल का अनुभव करता है, और आध्यात्म की ओर आकर्षित हो सकता है। जरूरत से ज्यादा सोच सकता है और चिंतित महसूस कर सकता है।",
+        type: 0,
+    },
+    {
+        combo: 777,
+        effect: "मनोदशा में उतार-चढ़ाव, आंतरिक उथलपुथल का अनुभव करता है, और आध्यात्म की ओर आकर्षित हो सकता है या रिश्तों में समस्याएँ हो सकती है। जरूरत से ज्यादा सोच सकता है और चिंतित महसूस कर सकता है।",
+        type: 0,
+    },
+    {
+        combo: 7777,
         effect:
             "मनोदशा में उतार-चढ़ाव, आंतरिक उथलपुथल का अनुभव करता है, और आध्यात्म की ओर आकर्षित हो सकता है। जरूरत से ज्यादा सोच सकता है और चिंतित महसूस कर सकता है।",
         type: 0,
     },
     {
+        combo: 77777,
+        effect: "मनोदशा में उतार-चढ़ाव, आंतरिक उथलपुथल का अनुभव करता है, और आध्यात्म की ओर आकर्षित हो सकता है। जरूरत से ज्यादा सोच सकता है और चिंतित महसूस कर सकता है।",
+        type: 0,
+    },
+
+    // 8
+    {
         combo: 88,
-        effect: "देरी, व्यवधान और रुकावटों का सामना करना पड़ सकता है।",
+        effect: "कार्यों में देरी, बाधाएँ, अड़चनें पैदा करता है, लेकिन कड़ी मेहनत करने पर भरपूर धन देता है।",
         type: 0,
     },
     {
-        combo: 99,
-        effect:
-            "ऋण, क्रोध और रक्त से संबंधित समस्याओं से जूझ सकता है। त्वचा का रंग लाल रंग का हो सकता है। बच्चों में भी यह संयोजन हो सकता है।",
+        combo: 888,
+        effect: "कार्यों में देरी, बाधाएँ, अड़चनें पैदा करता है, लेकिन कड़ी मेहनत करने पर भरपूर धन देता है।",
         type: 0,
     },
+    {
+        combo: 8888,
+        effect: "कार्यों में देरी, बाधाएँ, अड़चनें पैदा करता है, लेकिन कड़ी मेहनत करने पर भरपूर धन देता है।",
+        type: 0,
+    },
+    {
+        combo: 88888,
+        effect: "कार्यों में देरी, बाधाएँ, अड़चनें पैदा करता है, लेकिन कड़ी मेहनत करने पर भरपूर धन देता है।",
+        type: 0,
+    },
+
+    // 9
+    {
+        combo: 99,
+        effect:
+            "कर्ज, गुस्से और खून से जुड़ी समस्याओं का सामना करना पड़ सकता है। त्वचा का रंग लाल रंग का हो सकता है।",
+        type: 0,
+    },
+    {
+        combo: 999,
+        effect:
+            "कर्ज, गुस्से और खून से जुड़ी समस्याओं का सामना करना पड़ सकता है। त्वचा का रंग लाल रंग का हो सकता है।",
+        type: 0,
+    },
+    {
+        combo: 9999,
+        effect:
+            "कर्ज, गुस्से और खून से जुड़ी समस्याओं का सामना करना पड़ सकता है। त्वचा का रंग लाल रंग का हो सकता है।",
+        type: 0,
+    },
+    {
+        combo: 99999,
+        effect:
+            "कर्ज, गुस्से और खून से जुड़ी समस्याओं का सामना करना पड़ सकता है। त्वचा का रंग लाल रंग का हो सकता है।",
+        type: 0,
+    },
+
     {
         combo: 12,
         effect: "आकर्षक दिखता है, पैसा बचाता है, अच्छा जीवनसाथी मिलता है",

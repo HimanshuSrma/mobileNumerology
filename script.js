@@ -6,26 +6,7 @@ $(document).ready(() => {
     showHideDiv("inputDiv", "resultDiv");
 });
 
-function reset() {
-    $("#numberInput").val("");
-    $(".wrapperDiv").html("");
-    showHideDiv("inputDiv", "resultDiv");
-}
 
-
-function changeLang() {
-    let lan = $(".engLan").val();
-    lan = lan == "true" ? true : false;
-    console.log(typeof lan);
-    $(".engLan").val(!lan);
-    effectDataArr = lan == true ? englishArr : hindiArr;
-    compute();
-}
-
-function showHideDiv(show, hide) {
-    $(`#${show}`).show();
-    $(`#${hide}`).hide();
-}
 
 function find() {
     const numString = $("#numberInput").val();
@@ -44,6 +25,10 @@ function compute() {
     $(".wrapperDiv").html("");
     numberArr.forEach((element) => {
         pairs = convertToPairs(element);
+        occuancePerNum = occurancePair(element);
+        pairs = pairs.concat(occuancePerNum);
+        console.group(occuancePerNum, pairs);
+
         const validNum = mustExclude.every((item) => !pairs.includes(item));
         let compound = element
             .split("")
@@ -58,7 +43,7 @@ function compute() {
             allGood == true ? "allGoodClass borderCssCard" : "";
         let html = `
         <div class="col-lg-6 mx-auto mb-4">
-          <div class="shadow p-3 m-md-3 h-100 bg-white ${allGoodClass}">
+          <div class="shadow p-2 m-md-3 h-100 bg-white ${allGoodClass}">
             <div class="shadow mb-3 p-3 ${allGoodClass}">
             <span class="top"></span><span class="right"></span><span class="bottom"></span><span class="left"></span>
               <div class="row mx-0 text-center">
@@ -80,33 +65,50 @@ function compute() {
               </div>
             </div>
 
-            <div class="row mx-0 shadow p-2">`;
-        pairs.forEach((pair) => {
-            for (let index = 0; index < effectDataArr.length; index++) {
-                const elem = effectDataArr[index];
-                if (pair == elem.combo) {
-                    bgClass =
-                        elem.type == 0
-                            ? "bg-danger"
-                            : elem.type == 1
-                                ? "bg-success"
-                                : "bg-warning";
-                    html += `<div class="col-2 col-md-1 text-center px-1 my-auto">
-                                <div class="shadow p-2 ${bgClass}">${pair}</div>
-                              </div>
-                              <div class="col-10 col-md-11">
-                                <div class="shadow p-2 mb-3">${elem.effect}</div>
-                              </div>`;
-                }
-            }
-        });
-        html += `
-            </div>
+            <div class="row mx-0 shadow p-2 fs-14">`;
+                abcd = '';
+                pairs.forEach((pair) => {
+                    for (let index = 0; index < effectDataArr.length; index++) {
+                        const elem = effectDataArr[index];
+                        console.log(pair , pair.toString().length);
+                        if (pair == elem.combo) {
+                            debugger
+                            if(abcd ==''){
+                                abcd = pair.toString().length > 2 ? `<hr />`:'';
+                                html += abcd;
+                            }
+                            bgClass = elem.type == 0 ? "bg-danger" : elem.type == 1 ? "bg-success" : "bg-warning";
+                            html += `<div class="col-2 col-md-1 text-center ps-0 px-1 my-auto">
+                                        <div class="shadow py-2 px-1 fs-12 ${bgClass}">${pair}</div>
+                                    </div>
+                                    <div class="col-10 col-md-11 pe-0 px-1">
+                                        <div class="shadow p-2 mb-3">${elem.effect}</div>
+                                    </div>`;
+                        }
+                    }
+                });
+        html += `</div>
           </div>
         </div>`;
         $(".wrapperDiv").append(html);
         showHideDiv("resultDiv", "inputDiv");
     });
+}
+
+function occurancePair(number){
+    let digitCount = {};
+    // Loop through each digit in the input number and count occurrences.
+    for (let i = 0; i < number.length; i++) {
+        let digit = number[i];
+        digitCount[digit] = (digitCount[digit] || 0) + 1;
+    }
+    // Construct the string representation of counts
+    let combos = Object.keys(digitCount).map(function(digit) {
+        if(digitCount[digit] >2){
+            return digit.repeat(digitCount[digit])
+        }
+    });
+    return combos.filter(item => item !== undefined).map(item => Number(item));;
 }
 
 function sumToOneDigit(num) {
@@ -119,4 +121,24 @@ function sumToOneDigit(num) {
         num = sum;
     }
     return num;
+}
+
+function changeLang() {
+    let lan = $(".engLan").val();
+    lan = lan == "true" ? true : false;
+    console.log(typeof lan);
+    $(".engLan").val(!lan);
+    effectDataArr = lan == true ? englishArr : hindiArr;
+    compute();
+}
+
+function reset() {
+    $("#numberInput").val("");
+    $(".wrapperDiv").html("");
+    showHideDiv("inputDiv", "resultDiv");
+}
+
+function showHideDiv(show, hide) {
+    $(`#${show}`).show();
+    $(`#${hide}`).hide();
 }
