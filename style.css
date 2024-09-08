@@ -1,4 +1,6 @@
-
+body{
+  overflow-x: hidden;
+}
 .centerdDiv {
   height: calc(100vh - 125px);
   display: grid;
