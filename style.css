@@ -15,7 +15,7 @@ body {
 }
 
 .allGoodClass {
-  background: url("/confetti.gif");
+  background: url("confetti.gif");
   /* background: url("https://lordicon.com/icons/wired/flat/1103-confetti.gif"); */
   background-size: 100% 250%;
   border: #00000047;
