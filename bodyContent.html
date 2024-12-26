@@ -1,17 +1,66 @@
 <input type="hidden" id="engLan" class="engLan" value="1" />
 <div id="inputDiv">
-  <div class="centerdDiv">
+  <div class="container centerdDiv">
     <div class="text-center mt-3">
       <h1>Mobile No Numerology</h1>
       <p>By</p>
       <h5><em>Himanshu Sharma</em></h5>
-      <h6>Click <em><a href="https://wa.me/917835912569?text=Hi,%20I'm%20interested%20in%20mobile%20no%20numerology/" target="_blank">here</a></em> to get consultation</h6>
+      <h6>Click <em><a href="https://wa.me/917835912569?text=Hi,%20I'm%20interested%20in%20mobile%20number%20numerology" target="_blank">here</a></em> to get consultation</h6>
     </div>
-    <div class="row mx-0 justify-content-center">
-      <div class="col-8 col-md-7">
-        <input class="form-control" id="numberInput" oninput="this.value = this.value.replace(/[^0-9,.]/g,'')" onkeypress="event.keyCode === 13?find(1):null" placeholder="9876543210  ,  9876543210"/>
+    <div class="row mx-0 justify-content-center my-5">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input class="form-control inputFieldCss" id="name" placeholder="Himmanshu Sharma"
+          aria-describedby="nameHelp" />
+        <div id="nameHelp" class="form-text"></div>
       </div>
-      <div class="col-3 col-md-2 my-auto">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="currentNumber" class="form-label">Current Mobile No (WhatsApp)</label>
+        <input class="form-control inputFieldCss" id="currentNumber"
+          oninput="this.value = this.value.replace(/[^0-9,.]/g,'')" onkeypress="event.keyCode === 13?find(1):null"
+          placeholder="7835912569" aria-describedby="currentNumberHelp" />
+        <div id="currentNumberHelp" class="form-text"></div>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input class="form-control inputFieldCss" id="email" placeholder="name@domain.com"
+          aria-describedby="emailHelp" />
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="dobInput" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control inputFieldCss" id="dobInput" aria-describedby="dobInputHelp" />
+        <div id="dobInputHelp" class="form-text">To check compatability.</div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex my-3 bg-light p-3 shadow-lg mb-3 inputFieldCss text-muted fs-6">
+          <div class="my-auto me-3">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.2947 2H16.722C17.0724 2.1279 17.3197 2.39845 17.5853 2.64605C18.9379 3.91933 20.5534 4.86348 22.3115 5.40818C23.7974 5.86894 25.3176 6.04767 26.8634 6.05915C27.5579 6.06489 27.9411 6.44366 27.9475 7.12497C27.9699 9.52225 28.0756 11.9195 27.9371 14.3168C27.8355 16.0762 27.6091 17.8152 27.1322 19.5131C26.4081 22.0957 25.1479 24.3503 23.2117 26.1893C21.3762 27.9389 19.2055 29.0875 16.866 29.9385C16.6122 30.0263 16.3363 30.0188 16.0875 29.9172C14.5505 29.3597 13.0807 28.6644 11.7173 27.7421C9.10091 25.9712 7.26066 23.5745 6.19651 20.5519C5.36999 18.1833 5.09316 15.7196 5.02195 13.2248C4.96434 11.2284 5.03555 9.2312 5.06035 7.23483C5.06995 6.43055 5.414 6.06489 6.19891 6.05669C6.97278 6.05088 7.74555 5.99612 8.51283 5.89272C11.1996 5.52624 13.5535 4.43664 15.5402 2.53127C15.773 2.32303 16.0043 2.11724 16.2947 2ZM15.0145 19.2327C15.3136 19.2244 15.5979 19.0981 15.8082 18.8802C17.7456 17.012 19.684 15.1454 21.6235 13.2805C21.7611 13.1485 21.7347 13.0821 21.6235 12.9632C21.277 12.5967 20.9322 12.2253 20.6049 11.8425C20.4649 11.6785 20.3881 11.6883 20.2401 11.8343C18.6292 13.4188 17.0135 14.997 15.393 16.569C15.1354 16.8207 15.1362 16.8199 14.9073 16.5583C14.2352 15.7926 13.5599 15.0301 12.891 14.2627C12.795 14.152 12.7382 14.0987 12.6054 14.2291C12.2101 14.6095 11.8053 14.9768 11.39 15.3375C11.2788 15.4351 11.3148 15.4876 11.39 15.5704C12.3758 16.6854 13.3604 17.8007 14.344 18.9163C14.43 19.0125 14.5339 19.0901 14.6496 19.1444C14.7653 19.1988 14.8905 19.2288 15.0177 19.2327H15.0145Z"
+                fill="#15803D"></path>
+            </svg>
+          </div>
+          <div class="my-auto">
+            <div>We promise a strictly spam-free service. We will not contact you unless you ask us to do so.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 mb-3">
+        <label for="numberInput" class="form-label">New Mobile No</label>
+        <input class="form-control inputFieldCss" id="numberInput"
+          oninput="this.value = this.value.replace(/[^0-9,.]/g,'')" onkeypress="event.keyCode === 13?find(1):null"
+          placeholder="9876543210  ,  9876543210" aria-describedby="numberInputHelp" />
+        <div id="numberInputHelp" class="form-text">You can enter multiple numbers seperated by comma <strong> ","
+          </strong>Don't worry we don't store any data.</div>
+      </div>
+      <div class="col-12">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="contactPermissionCheckbox" checked>
+          <label class="form-check-label" for="contactPermissionCheckbox">I want your team to contact</label>
+        </div>
+      </div>
+      <div class="col-12 text-center mx-auto mt-4">
         <button class="btn btn-primary rounded-pill" onclick="find()">
           Analyse
         </button>
@@ -22,14 +71,22 @@
 
 <div id="resultDiv" class="" style="display: none">
   <div class="text-end bg-light py-3 position-sticky top-0 navClass">
-    <button type="button" onclick="changeLang()" class="btn btn-dark rounded-pill me-3"><i class="fa-solid fa-language me-2"></i>Change language</button>
-    <button type="button" onclick="reset()" class="btn btn-outline-dark rounded-pill me-3"><i class="fa-solid fa-pen-to-square me-2"></i>Edit Number</button>
+    <button type="button" onclick="changeLang()" class="btn btn-dark rounded-pill me-3"><i
+        class="fa-solid fa-language me-2"></i>Change language</button>
+    <button type="button" onclick="reset()" class="btn btn-outline-dark rounded-pill me-3"><i
+        class="fa-solid fa-pen-to-square me-2"></i>Edit Number</button>
   </div>
   <div class="text-center mt-3">
     <h1>Mobile No Numerology</h1>
     <p>By</p>
     <h5><em>Himanshu Sharma</em></h5>
-    <h6>Click <em><a href="https://wa.me/917835912569?text=Hi,%20I'm%20interested%20in%20mobile%20no%20numerology/" target="_blank">here</a></em> to get consultation</h6>
+    <h6>Click <em><a href="https://wa.me/917835912569?text=Hi,%20I'm%20interested%20in%20mobile%20number%20numerology"
+          target="_blank">here</a></em> to get consultation</h6>
   </div>
   <div class="wrapperDiv row mx-0 p-3"></div>
 </div>
+
+
+
+<!-- Snackbar / Toast -->
+<div id="snackbar"></div>
