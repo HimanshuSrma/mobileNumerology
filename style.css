@@ -7,7 +7,7 @@ body {
   display: grid;
   align-items: center;
   margin: auto;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .navClass {
@@ -171,21 +171,21 @@ body {
   backdrop-filter: blur(2px);
 }
 
-#numberInput {
-  padding: 0.75rem 1rem;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--bs-body-color);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: var(--bs-body-bg);
-  background-clip: padding-box;
-  border: unset;
-  border-radius: 50px;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  box-shadow: 0px 0px 10px #00000047;
+.inputFieldCss {
+  padding: 0.75rem 1rem !important;
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: var(--bs-body-color) !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-color: var(--bs-body-bg) !important;
+  background-clip: padding-box !important;
+  border: unset !important;
+  border-radius: 14px !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  box-shadow: 0px 0px 10px #00000047 !important;
 }
 
 hr {
@@ -208,3 +208,51 @@ hr {
     background-size: 100% 150% !important;
   }
 } */
+
+
+/* ############################################################################################################################################## */
+
+/* Snackbar / Toast */
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+/* ############################################################################################################################################## */
