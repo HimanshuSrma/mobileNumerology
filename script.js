@@ -55,14 +55,14 @@ function find() {
   })
     .then((response) => {
       if (response.ok) {
-        alert("Form submitted successfully!");
+        console.log("Form submitted successfully!");
       } else {
-        alert("Failed to submit the form.");
+        console.log("Failed to submit the form.");
       }
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert("An error occurred.");
+      console.log("An error occurred.");
     });
   compute();
 }
@@ -84,7 +84,7 @@ function compute() {
     let goodCompound = !mustExclude.includes(compound);
     let goodSum = sum == 1 || sum == 3 || sum == 5 || sum == 6 ? true : false;
     let vedicSum = sum == mulank || sum == bhagyank ? true : false;
-    debugger;
+    // debugger;
     let allGood = validNum && goodCompound && goodSum ? true : false;
     // console.group(allGood, validNum, goodCompound, goodSum);
     let allGoodClass = allGood == true ? "allGoodClass borderCssCard" : "";
